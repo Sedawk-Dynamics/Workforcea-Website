@@ -1,4 +1,8 @@
 import Image from 'next/image'
+// Static import: Next fingerprints the file by content, so replacing the PNG
+// produces a brand-new hashed URL. No browser, CDN or optimizer cache can
+// serve a stale banner, and width/height come from the file itself.
+import heroBanner from '@/public/hero-banner-image.png'
 
 export function HeroSection() {
   return (
@@ -8,16 +12,14 @@ export function HeroSection() {
         engines and screen readers, which cannot read text baked into an image.
       */}
       <h1 className="sr-only">
-        Workforcea Talent Solutions — building the teams that move businesses
-        forward. Technology recruitment, executive search, GCC hiring and
-        workforce solutions.
+        Workforcea Talent Solutions — connecting talent, driving impact,
+        building what&apos;s next. Executive search, leadership hiring, IT
+        recruitment, GCC hiring, RPO and workforce strategy.
       </h1>
 
       <Image
-        src="/hero-banner-image.png"
-        alt="Workforcea Talent Solutions — connecting talent, enabling growth"
-        width={1107}
-        height={652}
+        src={heroBanner}
+        alt="Workforcea Talent Solutions — connecting talent, driving impact, building what's next"
         priority
         sizes="100vw"
         className="h-auto w-full"
