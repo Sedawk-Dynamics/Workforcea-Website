@@ -242,7 +242,7 @@ export const SERVICES: Service[] = [
     ],
     whyWorkforcea: [
       'Technical screening happens before submission, so your engineers interview fewer and better candidates.',
-      'Specialist networks across cloud, data, security and AI rather than a generalist database.',
+      'We reach passive engineers through referral and community networks, not just a keyword search of a database.',
       'Weekly pipeline reporting you can actually plan against.',
     ],
   },

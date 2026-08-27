@@ -94,7 +94,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="bg-muted py-24 lg:py-32">
+    <section id="contact" className="bg-muted py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="text-sm font-semibold uppercase tracking-widest text-accent">
@@ -104,13 +104,12 @@ export function ContactSection() {
             Let&apos;s talk about your next hire
           </h2>
           <p className="mt-5 text-pretty leading-relaxed text-muted-foreground">
-            Tell us the role, the timeline and the constraints. You will hear
-            back from the person who would actually run the search — within one
-            business day.
+            Send us the brief below, or call if it is easier. Either way you
+            will hear back from the person who would actually run the search.
           </p>
         </Reveal>
 
-        <div className="mt-14 grid gap-8 lg:grid-cols-5">
+        <div className="mt-12 grid gap-8 lg:grid-cols-5">
           <Reveal direction="right" className="lg:col-span-2">
             <div className="flex h-full flex-col justify-between rounded-3xl bg-navy p-8 text-white">
               <div>

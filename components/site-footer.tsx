@@ -54,9 +54,8 @@ export function SiteFooter() {
               className="h-16 w-auto object-contain"
             />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/50">
-              A specialist recruitment firm for technology and leadership
-              hiring — built on fifteen years of talent acquisition
-              leadership.
+              Executive search, technology recruitment and workforce
+              solutions for companies scaling with ambition.
             </p>
             <div className="mt-6 flex items-center gap-3">
               <a

@@ -2,7 +2,8 @@
 
 import { UserCheck, Network, LineChart, Gauge } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { Reveal, RevealGroup, revealItem } from '@/components/motion/reveal'
+import { RevealGroup, revealItem } from '@/components/motion/reveal'
+import { SectionHeading } from '@/components/section-heading'
 
 const REASONS = [
   {
@@ -33,19 +34,16 @@ const REASONS = [
 
 export function WhyUsSection() {
   return (
-    <section id="why-us" className="bg-white py-24 lg:py-32">
+    <section id="why-us" className="bg-white py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <span className="text-sm font-semibold uppercase tracking-widest text-accent">
-            Why Workforcea
-          </span>
-          <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight text-navy sm:text-4xl">
-            Four reasons clients give us the difficult roles
-          </h2>
-        </Reveal>
+        <SectionHeading
+          align="center"
+          title="Why Workforcea"
+          subtitle="Four reasons clients give us the difficult roles"
+        />
 
         <RevealGroup
-          className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
           stagger={0.08}
         >
           {REASONS.map((reason) => {
@@ -54,19 +52,20 @@ export function WhyUsSection() {
               <motion.div
                 key={reason.title}
                 variants={revealItem}
-                className="flex flex-col rounded-2xl border border-border bg-muted p-6"
+                tabIndex={0}
+                className="brand-card group flex h-full flex-col rounded-2xl p-7 outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
               >
-                <div className="flex size-11 items-center justify-center rounded-full bg-white">
+                <div className="flex size-12 items-center justify-center rounded-xl bg-white text-navy shadow-sm transition-colors duration-300 group-hover:bg-accent group-hover:text-white group-focus-visible:bg-accent group-focus-visible:text-white">
                   <Icon
-                    className="size-5 text-navy"
+                    className="size-6"
                     strokeWidth={1.75}
                     aria-hidden="true"
                   />
                 </div>
-                <h3 className="mt-5 font-heading text-base font-semibold text-navy">
+                <h3 className="mt-6 font-heading text-xl font-bold text-navy">
                   {reason.title}
                 </h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-3 text-[0.95rem] leading-relaxed text-muted-foreground">
                   {reason.description}
                 </p>
               </motion.div>

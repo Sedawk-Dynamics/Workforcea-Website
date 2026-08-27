@@ -7,7 +7,7 @@ import { SITE } from '@/lib/site'
 
 export function CtaSection() {
   return (
-    <section className="bg-white px-6 py-20 lg:px-8">
+    <section className="bg-white px-6 py-14 lg:px-8">
       <Reveal>
         <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl bg-navy px-8 py-14 sm:px-14 sm:py-16">
           <div className="bg-grid absolute inset-0 opacity-[0.08]" />

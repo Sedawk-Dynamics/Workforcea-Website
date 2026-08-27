@@ -3,7 +3,7 @@ import { SITE } from '@/lib/site'
 
 export function InsightsSection() {
   return (
-    <section id="insights" className="bg-white px-6 pb-4 pt-20 lg:px-8 lg:pt-24">
+    <section id="insights" className="bg-white px-6 pb-2 pt-16 lg:px-8 lg:pt-20">
       <div className="mx-auto grid max-w-6xl gap-6 rounded-3xl border border-border bg-muted p-8 sm:p-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div>
           <span className="text-sm font-semibold uppercase tracking-widest text-accent">

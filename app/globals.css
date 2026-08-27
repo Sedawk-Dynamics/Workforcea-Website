@@ -48,6 +48,8 @@
   --color-slate: var(--slate);
   --color-slate-light: var(--slate-light);
   --color-ice: var(--ice);
+  --color-brand-tint: var(--brand-tint);
+  --color-brand-tint-strong: var(--brand-tint-strong);
   --font-sans: var(--font-body);
   --font-heading: var(--font-heading);
 }
@@ -87,6 +89,8 @@
   --sidebar-border: #e3e7ed;
   --sidebar-ring: #2f6fed;
 
+  --brand-tint: #f4f7fc;
+  --brand-tint-strong: #e8eff9;
   --navy: #0b1f3d;
   --navy-deep: #071328;
   --slate: #8a94a6;
@@ -159,6 +163,35 @@
         transparent 1px
       );
     background-size: 44px 44px;
+  }
+
+  /* Shared card treatment: brand-tinted surface that lifts on hover. */
+  .brand-card {
+    background-color: var(--brand-tint);
+    border: 1px solid color-mix(in oklab, var(--navy) 9%, transparent);
+    transition:
+      transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.3s ease,
+      background-color 0.3s ease;
+  }
+  .brand-card:hover,
+  .brand-card:focus-visible,
+  .brand-card:focus-within {
+    transform: translateY(-6px);
+    background-color: #ffffff;
+    border-color: color-mix(in oklab, var(--accent) 38%, transparent);
+    box-shadow: 0 22px 45px -28px color-mix(in oklab, var(--navy) 65%, transparent);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .brand-card,
+    .brand-card:hover,
+    .brand-card:focus-visible,
+    .brand-card:focus-within {
+      transform: none;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
   }
 
   .flip-card {

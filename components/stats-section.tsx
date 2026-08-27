@@ -1,13 +1,11 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { useInView, useReducedMotion } from 'framer-motion'
-import { Reveal } from '@/components/motion/reveal'
+import { motion, useInView, useReducedMotion } from 'framer-motion'
 
 type Stat = {
   /** Numeric part to count up. Omit for text-only values such as "India + Global". */
   value?: number
-  prefix?: string
   suffix?: string
   /** Used instead of the counter when there is no number to animate. */
   text?: string
@@ -21,26 +19,26 @@ const STATS: Stat[] = [
   { text: 'India + Global', label: 'Talent Markets Covered' },
 ]
 
-function Counter({ value, prefix, suffix }: Omit<Stat, 'label'>) {
+function Counter({ value, suffix }: { value: number; suffix?: string }) {
   const reduceMotion = useReducedMotion()
   const ref = useRef<HTMLSpanElement>(null)
   const isInView = useInView(ref, { once: true, margin: '-40px' })
   const [display, setDisplay] = useState(0)
 
   useEffect(() => {
-    if (value === undefined || !isInView) return
+    if (!isInView) return
     if (reduceMotion) {
       setDisplay(value)
       return
     }
 
     let frame = 0
-    const duration = 900
+    const duration = 1400
     const start = performance.now()
 
     const step = (now: number) => {
       const progress = Math.min((now - start) / duration, 1)
-      const eased = 1 - Math.pow(1 - progress, 3)
+      const eased = 1 - Math.pow(1 - progress, 4)
       setDisplay(Math.round(eased * value))
       if (progress < 1) frame = requestAnimationFrame(step)
     }
@@ -50,10 +48,9 @@ function Counter({ value, prefix, suffix }: Omit<Stat, 'label'>) {
   }, [isInView, value, reduceMotion])
 
   return (
-    <span ref={ref}>
-      {prefix}
-      {value === undefined ? null : display.toLocaleString()}
-      {suffix}
+    <span ref={ref} className="tabular-nums">
+      {display.toLocaleString()}
+      <span className="text-accent">{suffix}</span>
     </span>
   )
 }
@@ -62,38 +59,46 @@ export function StatsSection() {
   return (
     <section
       aria-label="Workforcea at a glance"
-      className="border-y border-border bg-white py-16"
+      className="relative overflow-hidden border-y border-border bg-brand-tint py-12 lg:py-14"
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <Reveal>
-          <dl className="grid grid-cols-2 gap-8 sm:grid-cols-4">
-            {STATS.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <dt className="sr-only">{stat.label}</dt>
-                <dd>
-                  <span className="block font-heading text-3xl font-bold text-navy sm:text-4xl">
-                    {stat.text ? (
-                      stat.text
-                    ) : (
-                      <Counter
-                        value={stat.value}
-                        prefix={stat.prefix}
-                        suffix={stat.suffix}
-                      />
-                    )}
-                  </span>
-                  <span
-                    aria-hidden="true"
-                    className="mt-2 block text-xs leading-snug text-muted-foreground sm:text-sm"
-                  >
-                    {stat.label}
-                  </span>
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </Reveal>
-      </div>
+      <div className="bg-grid pointer-events-none absolute inset-0 opacity-50" />
+
+      <motion.dl
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-60px' }}
+        variants={{
+          hidden: {},
+          visible: { transition: { staggerChildren: 0.12 } },
+        }}
+        className="relative mx-auto grid max-w-7xl grid-cols-2 gap-y-10 px-6 sm:grid-cols-4 lg:px-8"
+      >
+        {STATS.map((stat, index) => (
+          <motion.div
+            key={stat.label}
+            variants={{
+              hidden: { opacity: 0, y: 22 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+              },
+            }}
+            className={`flex flex-col-reverse px-4 text-center sm:px-6 ${
+              index > 0 ? 'sm:border-l sm:border-navy/10' : ''
+            }`}
+          >
+            <dt className="mt-2.5 text-xs font-medium uppercase tracking-wide text-muted-foreground sm:text-[0.8rem]">
+              {stat.label}
+            </dt>
+            <dd className="font-heading text-3xl font-extrabold tracking-tight text-navy sm:text-4xl lg:text-[2.75rem]">
+              {stat.text ?? (
+                <Counter value={stat.value!} suffix={stat.suffix} />
+              )}
+            </dd>
+          </motion.div>
+        ))}
+      </motion.dl>
     </section>
   )
 }

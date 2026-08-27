@@ -54,7 +54,7 @@ export default async function ServicePage({
       <SiteHeader />
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden bg-navy pt-32 pb-20 lg:pt-40 lg:pb-24">
+        <section className="relative overflow-hidden bg-navy pt-28 pb-16 lg:pt-36 lg:pb-20">
           <div className="bg-grid absolute inset-0 opacity-[0.07]" />
           <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
             <nav
@@ -119,7 +119,7 @@ export default async function ServicePage({
         </section>
 
         {/* Who it's for */}
-        <section className="bg-white py-20 lg:py-24">
+        <section className="bg-white py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
               <Reveal>
@@ -154,7 +154,7 @@ export default async function ServicePage({
         </section>
 
         {/* What we solve */}
-        <section className="bg-muted py-20 lg:py-24">
+        <section className="bg-muted py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <Reveal className="max-w-2xl">
               <span className="text-sm font-semibold uppercase tracking-widest text-accent">
@@ -186,7 +186,7 @@ export default async function ServicePage({
         </section>
 
         {/* How we work */}
-        <section className="bg-white py-20 lg:py-24">
+        <section className="bg-white py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <Reveal className="max-w-2xl">
               <span className="text-sm font-semibold uppercase tracking-widest text-accent">
@@ -219,7 +219,7 @@ export default async function ServicePage({
         </section>
 
         {/* Roles covered + engagement */}
-        <section className="bg-muted py-20 lg:py-24">
+        <section className="bg-muted py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
               <Reveal>
@@ -269,7 +269,7 @@ export default async function ServicePage({
         </section>
 
         {/* Why Workforcea */}
-        <section className="bg-white py-20 lg:py-24">
+        <section className="bg-white py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <Reveal className="max-w-2xl">
               <span className="text-sm font-semibold uppercase tracking-widest text-accent">
@@ -300,7 +300,7 @@ export default async function ServicePage({
         </section>
 
         {/* Other services */}
-        <section className="bg-muted py-20 lg:py-24">
+        <section className="bg-muted py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <h2 className="font-heading text-xl font-semibold text-navy">
               Other services
@@ -333,7 +333,7 @@ export default async function ServicePage({
         </section>
 
         {/* CTA */}
-        <section className="bg-white px-6 py-20 lg:px-8">
+        <section className="bg-white px-6 py-14 lg:px-8">
           <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl bg-navy px-8 py-14 sm:px-14 sm:py-16">
             <div className="bg-grid absolute inset-0 opacity-[0.08]" />
             <div className="relative flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
@@ -342,9 +342,9 @@ export default async function ServicePage({
                   Have a mandate in {service.short}?
                 </h2>
                 <p className="mt-4 text-pretty leading-relaxed text-white/70">
-                  Tell us the role, the timeline and the constraints. We will
-                  come back within one business day with a view on how to run
-                  it.
+                  Send us the brief and we will come back with a view on how to
+                  run it — including whether we think we are the right partner
+                  for it.
                 </p>
               </div>
               <Button

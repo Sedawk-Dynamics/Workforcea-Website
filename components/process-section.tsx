@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Reveal, RevealGroup, revealItem } from '@/components/motion/reveal'
+import { RevealGroup, revealItem } from '@/components/motion/reveal'
+import { SectionHeading } from '@/components/section-heading'
 
 const STEPS = [
   {
@@ -33,38 +34,32 @@ const STEPS = [
 
 export function ProcessSection() {
   return (
-    <section id="how-we-work" className="bg-muted py-24 lg:py-32">
+    <section id="how-we-work" className="bg-muted py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <Reveal className="max-w-2xl">
-          <span className="text-sm font-semibold uppercase tracking-widest text-accent">
-            How We Work
-          </span>
-          <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight text-navy sm:text-4xl">
-            The same five steps on every mandate
-          </h2>
-          <p className="mt-5 text-pretty leading-relaxed text-muted-foreground">
-            You should always know where a search stands and what happens next.
-            This is the process behind every engagement, whatever its size.
-          </p>
-        </Reveal>
+        <SectionHeading
+          title="How We Work"
+          subtitle="The same five steps on every mandate"
+          description="You should always know where a search stands and what happens next. This is the process behind every engagement, whatever its size."
+        />
 
         <RevealGroup
-          className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-5"
+          className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5"
           stagger={0.08}
         >
           {STEPS.map((step, index) => (
             <motion.div
               key={step.title}
               variants={revealItem}
-              className="relative flex flex-col rounded-2xl border border-border bg-white p-6"
+              tabIndex={0}
+              className="brand-card group relative flex h-full flex-col rounded-2xl p-6 outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
             >
-              <span className="font-mono text-xs font-semibold tracking-widest text-accent">
+              <span className="flex size-11 items-center justify-center rounded-xl bg-white font-heading text-base font-extrabold text-accent shadow-sm transition-colors duration-300 group-hover:bg-accent group-hover:text-white group-focus-visible:bg-accent group-focus-visible:text-white">
                 {String(index + 1).padStart(2, '0')}
               </span>
-              <h3 className="mt-4 font-heading text-base font-semibold text-navy">
+              <h3 className="mt-5 font-heading text-lg font-bold text-navy">
                 {step.title}
               </h3>
-              <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-2.5 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {step.description}
               </p>
             </motion.div>

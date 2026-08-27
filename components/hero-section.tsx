@@ -13,17 +13,11 @@ const DISCIPLINES = [
   'Workforce Solutions',
 ]
 
-const PROOF = [
-  { value: '15 Years', label: 'Talent acquisition leadership' },
-  { value: '50+', label: 'Recruiters & teams led' },
-  { value: 'India + Global', label: 'Talent markets covered' },
-]
-
 export function HeroSection() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden bg-white pt-32 pb-20 lg:pt-40 lg:pb-28"
+      className="relative overflow-hidden bg-white pt-28 pb-16 lg:pt-36 lg:pb-20"
     >
       <div className="bg-grid absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent)]" />
 
@@ -80,20 +74,6 @@ export function HeroSection() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.32}>
-            <dl className="mt-14 grid grid-cols-3 gap-6 border-t border-border pt-8">
-              {PROOF.map((item) => (
-                <div key={item.label}>
-                  <dd className="font-heading text-2xl font-bold text-navy sm:text-3xl">
-                    {item.value}
-                  </dd>
-                  <dt className="mt-1 text-xs leading-snug text-muted-foreground">
-                    {item.label}
-                  </dt>
-                </div>
-              ))}
-            </dl>
-          </Reveal>
         </div>
 
         <motion.div
@@ -125,8 +105,7 @@ export function HeroSection() {
               Senior-led on every mandate
             </p>
             <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
-              Workforcea is new. The experience behind it is 15 years of
-              technology and leadership hiring.
+              You deal directly with the person running your search.
             </p>
           </motion.div>
         </motion.div>
