@@ -9,7 +9,7 @@ import {
 } from 'react'
 import { motion, useInView, useReducedMotion } from 'framer-motion'
 import { Users, Network, Globe2, MapPin } from 'lucide-react'
-import { CanadaFlag, UsaFlag } from '@/components/flags'
+import { UsaFlag } from '@/components/flags'
 
 type Item = {
   key: string
@@ -56,16 +56,9 @@ const ITEMS: Item[] = [
       </span>
     ),
     eyebrow: 'Our Focus',
-    heading: 'North America + India',
+    heading: 'USA + India',
     description: 'Uniting opportunities and delivering exceptional talent across borders.',
     featured: true,
-  },
-  {
-    key: 'canada',
-    icon: <CanadaFlag className="size-9" />,
-    heading: 'Canada',
-    description:
-      'Strong presence across Canada with trusted partnerships and proven results.',
   },
   {
     key: 'usa',
@@ -134,7 +127,7 @@ export function StatsSection() {
           hidden: {},
           visible: { transition: { staggerChildren: 0.1 } },
         }}
-        className="relative mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-y-8 rounded-3xl border border-border bg-brand-tint p-6 sm:grid-cols-2 sm:gap-x-4 lg:grid-cols-5 lg:gap-y-0 lg:p-8"
+        className="relative mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-y-8 rounded-3xl border border-border bg-brand-tint p-6 sm:grid-cols-2 sm:gap-x-4 lg:grid-cols-4 lg:gap-y-0 lg:p-8"
       >
         {ITEMS.map((item, index) => (
           <motion.div
