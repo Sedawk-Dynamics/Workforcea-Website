@@ -78,9 +78,9 @@ export function IndustriesSection() {
           description="We recruit where we have real market knowledge — who the talent is, what they are paid, and which companies they move between."
         />
 
-        {/* Six-column track: three tiles up top, two wider ones beneath. */}
+        {/* Six-column track: three cards up top, two wider ones beneath. */}
         <RevealGroup
-          className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-6"
+          className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6"
           stagger={0.08}
         >
           {INDUSTRIES.map((industry) => {
@@ -90,35 +90,37 @@ export function IndustriesSection() {
                 key={industry.title}
                 variants={revealItem}
                 tabIndex={0}
-                className={`group relative isolate overflow-hidden rounded-2xl outline-none ring-1 ring-white/12 transition-all duration-300 hover:ring-accent/70 focus-visible:ring-2 focus-visible:ring-accent ${
+                className={`group flex h-full flex-col overflow-hidden rounded-2xl bg-white outline-none ring-1 ring-white/10 transition-all duration-300 hover:-translate-y-1.5 hover:ring-2 hover:ring-accent focus-visible:ring-2 focus-visible:ring-accent motion-reduce:hover:translate-y-0 ${
                   industry.wide ? 'lg:col-span-3' : 'lg:col-span-2'
                 }`}
               >
-                <Image
-                  src={industry.image}
-                  alt=""
-                  aria-hidden="true"
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className="absolute inset-0 -z-10 size-full object-cover transition-transform duration-500 group-hover:scale-[1.06] motion-reduce:group-hover:scale-100"
-                />
-                {/* Keeps the copy legible whatever photo sits behind it. */}
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 -z-10 bg-gradient-to-t from-navy-deep via-navy-deep/75 to-navy-deep/25"
-                />
-
-                <div className="flex h-full min-h-[15rem] flex-col justify-end p-6 lg:min-h-[17rem]">
-                  <span className="flex size-11 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-white backdrop-blur-sm transition-colors duration-300 group-hover:border-accent group-hover:bg-accent">
+                {/* Photography stays full colour — no overlay muting it. */}
+                <div className="relative h-44 shrink-0 overflow-hidden lg:h-52">
+                  <Image
+                    src={industry.image}
+                    alt={industry.title}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.06] motion-reduce:group-hover:scale-100"
+                  />
+                  <span className="absolute bottom-3 left-3 flex size-11 items-center justify-center rounded-xl bg-white/95 text-navy shadow-md backdrop-blur-sm transition-colors duration-300 group-hover:bg-accent group-hover:text-white">
                     <Icon
                       className="size-5"
                       strokeWidth={1.9}
                       aria-hidden="true"
                     />
                   </span>
-                  <h3 className="mt-5 font-heading text-lg font-bold leading-snug text-white">
+                </div>
+
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="font-heading text-lg font-bold leading-snug text-navy">
                     {industry.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/70">
+                  <span
+                    aria-hidden="true"
+                    className="mt-3 block h-1 w-10 origin-left rounded-full bg-accent transition-transform duration-300 group-hover:scale-x-150"
+                  />
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                     {industry.description}
                   </p>
                 </div>
