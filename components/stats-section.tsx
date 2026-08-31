@@ -13,7 +13,6 @@ type Stat = {
 }
 
 const STATS: Stat[] = [
-  { value: 15, suffix: '+', label: 'Years of Talent Acquisition Experience' },
   { value: 50, suffix: '+', label: 'Recruiters & Teams Led' },
   { value: 18, suffix: 'K+', label: 'Professional Network' },
   { text: 'India + Global', label: 'Talent Markets Covered' },
@@ -71,7 +70,7 @@ export function StatsSection() {
           hidden: {},
           visible: { transition: { staggerChildren: 0.12 } },
         }}
-        className="relative mx-auto grid max-w-7xl grid-cols-2 gap-y-10 px-6 sm:grid-cols-4 lg:px-8"
+        className="relative mx-auto grid max-w-7xl grid-cols-1 gap-y-10 px-6 sm:grid-cols-3 lg:px-8"
       >
         {STATS.map((stat, index) => (
           <motion.div

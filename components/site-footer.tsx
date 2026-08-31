@@ -2,32 +2,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Mail, Phone, MapPin } from 'lucide-react'
 import { Separator } from '@/components/ui/separator'
+import { SocialLinks } from '@/components/social-links'
 import { SERVICES, SITE } from '@/lib/site'
-
-function LinkedinIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="size-4" aria-hidden="true">
-      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z" />
-    </svg>
-  )
-}
-
-function InstagramIcon() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      className="size-4"
-      aria-hidden="true"
-    >
-      <rect x="3" y="3" width="18" height="18" rx="5" />
-      <circle cx="12" cy="12" r="4" />
-      <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none" />
-    </svg>
-  )
-}
+// White knockout of the same wordmark — the full-colour logo is navy/grey and
+// would disappear against the dark footer.
+import wordmarkWhite from '@/public/images/workforcea-logo-white.png'
 
 const NAV_LINKS = [
   { label: 'About', href: '/#about' },
@@ -47,36 +26,15 @@ export function SiteFooter() {
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-1">
             <Image
-              src="/images/logo-footer.png"
+              src={wordmarkWhite}
               alt="Workforcea Talent Solutions"
-              width={860}
-              height={501}
-              className="h-16 w-auto object-contain"
+              className="h-14 w-auto object-contain sm:h-16"
             />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/50">
               Executive search, technology recruitment and workforce
               solutions for companies scaling with ambition.
             </p>
-            <div className="mt-6 flex items-center gap-3">
-              <a
-                href={SITE.linkedin}
-                target="_blank"
-                rel="noreferrer noopener"
-                aria-label="Workforcea on LinkedIn"
-                className="flex size-9 items-center justify-center rounded-full border border-white/15 transition-colors hover:border-white/40 hover:text-white"
-              >
-                <LinkedinIcon />
-              </a>
-              <a
-                href={SITE.instagram}
-                target="_blank"
-                rel="noreferrer noopener"
-                aria-label="Workforcea on Instagram"
-                className="flex size-9 items-center justify-center rounded-full border border-white/15 transition-colors hover:border-white/40 hover:text-white"
-              >
-                <InstagramIcon />
-              </a>
-            </div>
+            <SocialLinks tone="dark" className="mt-6" />
           </div>
 
           <div>

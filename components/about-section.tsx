@@ -45,25 +45,6 @@ export function AboutSection() {
                 />
               </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 14, scale: 0.94 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.25,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                className="absolute -right-4 -top-5 hidden w-[15rem] rounded-2xl border border-border bg-white p-6 shadow-xl sm:block"
-              >
-                <p className="font-heading text-5xl font-extrabold leading-none tracking-tight text-navy">
-                  15
-                  <span className="text-accent">+</span>
-                </p>
-                <p className="mt-3 text-sm font-medium leading-snug text-muted-foreground">
-                  Years of recruitment leadership behind a new firm
-                </p>
-              </motion.div>
             </div>
           </Reveal>
 

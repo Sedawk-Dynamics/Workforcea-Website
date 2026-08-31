@@ -1,6 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { ArrowUpRight } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Reveal } from '@/components/motion/reveal'
 import { RevealGroup, revealItem } from '@/components/motion/reveal'
 import { SectionHeading } from '@/components/section-heading'
 
@@ -85,6 +88,29 @@ export function RolesSection() {
             </motion.div>
           ))}
         </RevealGroup>
+
+        <Reveal delay={0.1}>
+          <div className="mt-12 flex flex-col items-center gap-5 rounded-2xl border border-border bg-navy px-8 py-9 text-center sm:flex-row sm:justify-between sm:text-left">
+            <div>
+              <p className="font-heading text-xl font-bold text-white sm:text-2xl">
+                Hiring for a role that is not listed here?
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-white/70">
+                Tell us the brief — we will say honestly whether we are the
+                right partner for it.
+              </p>
+            </div>
+            <Button
+              render={<a href="/#contact" />}
+              nativeButton={false}
+              size="lg"
+              className="shrink-0 bg-white px-6 text-navy hover:bg-white/90"
+            >
+              Discuss Your Hiring Need
+              <ArrowUpRight data-icon="inline-end" />
+            </Button>
+          </div>
+        </Reveal>
       </div>
     </section>
   )

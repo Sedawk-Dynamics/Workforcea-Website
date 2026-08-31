@@ -14,6 +14,7 @@ import {
   FieldError,
 } from '@/components/ui/field'
 import { Reveal } from '@/components/motion/reveal'
+import { SocialLinks } from '@/components/social-links'
 import { HIRING_TYPES, POSITION_COUNTS, SITE } from '@/lib/site'
 
 const CONTACT_DETAILS = [
@@ -149,15 +150,12 @@ export function ContactSection() {
                 </div>
               </div>
 
-              <a
-                href={SITE.linkedin}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="mt-10 inline-flex items-center gap-1.5 text-sm font-semibold text-white/80 hover:text-white"
-              >
-                Follow us on LinkedIn
-                <ArrowUpRight className="size-3.5" aria-hidden="true" />
-              </a>
+              <div className="mt-10 border-t border-white/10 pt-6">
+                <p className="text-xs font-medium uppercase tracking-wide text-white/50">
+                  Follow us
+                </p>
+                <SocialLinks tone="dark" className="mt-3.5" />
+              </div>
             </div>
           </Reveal>
 

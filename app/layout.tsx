@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Plus_Jakarta_Sans, Inter } from 'next/font/google'
 import { Toaster } from '@/components/ui/sonner'
+import { SplashScreen } from '@/components/splash-screen'
 import { SITE } from '@/lib/site'
 import './globals.css'
 
@@ -78,7 +79,17 @@ export default function RootLayout({
       lang="en"
       className={`${_bodyFont.variable} ${_headingFont.variable} bg-background`}
     >
+      <head>
+        {/*
+          Without JS the splash has no timer to dismiss it, so hide it outright
+          rather than leaving the page permanently covered.
+        */}
+        <noscript>
+          <style>{`[data-splash]{display:none!important}`}</style>
+        </noscript>
+      </head>
       <body className="antialiased">
+        <SplashScreen />
         {children}
         <Toaster position="bottom-right" />
         {process.env.NODE_ENV === 'production' && <Analytics />}

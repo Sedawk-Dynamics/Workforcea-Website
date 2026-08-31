@@ -165,6 +165,45 @@
     background-size: 44px 44px;
   }
 
+  /* Splash screen: a highlight sweeps through the logo's silhouette. */
+  @keyframes shimmer-sweep {
+    from {
+      background-position: -150% 0;
+    }
+    to {
+      background-position: 250% 0;
+    }
+  }
+
+  @keyframes splash-progress {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  .shimmer-sweep {
+    background-image: linear-gradient(
+      105deg,
+      transparent 32%,
+      color-mix(in oklab, var(--accent) 70%, transparent) 48%,
+      color-mix(in oklab, var(--accent) 85%, white) 52%,
+      transparent 68%
+    );
+    background-size: 220% 100%;
+    background-repeat: no-repeat;
+    animation: shimmer-sweep 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .shimmer-sweep {
+      animation: none;
+      background-image: none;
+    }
+  }
+
   /* Shared card treatment: brand-tinted surface that lifts on hover. */
   .brand-card {
     background-color: var(--brand-tint);

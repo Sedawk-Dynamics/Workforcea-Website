@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { Reveal, RevealGroup, revealItem } from '@/components/motion/reveal'
 import { SectionHeading } from '@/components/section-heading'
 import { SITE } from '@/lib/site'
+import founderPhoto from '@/public/images/sunil.jpg'
 
 const HIGHLIGHTS = [
   'Technology recruitment & executive search',
@@ -34,11 +35,10 @@ export function FounderSection() {
             <div className="relative">
               <div className="overflow-hidden rounded-3xl border border-border bg-white shadow-[0_24px_70px_-38px_rgba(11,31,61,0.5)]">
                 <Image
-                  src="/images/founder.jpg"
+                  src={founderPhoto}
                   alt="Sunil Yadav, Founder and CEO of Workforcea Talent Solutions LLP"
-                  width={800}
-                  height={900}
                   sizes="(min-width: 1024px) 40vw, 100vw"
+                  placeholder="blur"
                   className="h-[380px] w-full object-cover object-top lg:h-[460px]"
                 />
                 <div className="border-t border-border p-6">
@@ -53,7 +53,7 @@ export function FounderSection() {
                   </p>
 
                   <a
-                    href={SITE.linkedin}
+                    href={SITE.linkedinFounder}
                     target="_blank"
                     rel="noreferrer noopener"
                     className="mt-5 inline-flex items-center gap-1.5 rounded-lg bg-navy px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-navy-deep"

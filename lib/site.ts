@@ -19,10 +19,33 @@ export const SITE = {
   address:
     "Level 4, D' Wing, MBC InfoTech Park, Ghodbunder Road, Kasarwadavali, Thane, Maharashtra – 400615",
   hours: 'Mon – Sat, 9:30 AM – 6:30 PM IST',
-  linkedin: 'https://www.linkedin.com/company/workforcea-talent-solutions-llp',
+  linkedin: 'https://www.linkedin.com/company/workforcea/',
+  linkedinFounder: 'https://www.linkedin.com/in/sunilyadava',
   instagram: 'https://www.instagram.com/workforcea_global',
   newsletterTitle: 'TA Leadership | Beyond Resume',
 }
+
+/** Rendered in the footer and the contact card so both stay in sync. */
+export const SOCIAL_LINKS = [
+  {
+    label: 'LinkedIn',
+    ariaLabel: 'Workforcea on LinkedIn',
+    href: SITE.linkedin,
+    icon: 'linkedin' as const,
+  },
+  {
+    label: 'Instagram',
+    ariaLabel: 'Workforcea on Instagram',
+    href: SITE.instagram,
+    icon: 'instagram' as const,
+  },
+  {
+    label: "Founder's LinkedIn",
+    ariaLabel: 'Sunil Yadav, Founder & CEO, on LinkedIn',
+    href: SITE.linkedinFounder,
+    icon: 'user' as const,
+  },
+]
 
 export type Service = {
   slug: string

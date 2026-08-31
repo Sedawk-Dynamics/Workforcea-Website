@@ -16,6 +16,7 @@ import {
 } from '@/components/ui/sheet'
 import { cn } from '@/lib/utils'
 import { SERVICES } from '@/lib/site'
+import wordmark from '@/public/images/workforcea-logo-tight.png'
 
 const NAV_LINKS = [
   { label: 'About', href: '/#about' },
@@ -151,12 +152,10 @@ export function SiteHeader() {
           aria-label="Workforcea home"
         >
           <Image
-            src="/images/logo.png"
+            src={wordmark}
             alt="Workforcea Talent Solutions"
-            width={868}
-            height={509}
             priority
-            className="h-14 w-auto object-contain sm:h-16"
+            className="h-11 w-auto object-contain sm:h-12 xl:h-14"
           />
         </Link>
 
@@ -203,11 +202,9 @@ export function SiteHeader() {
             <SheetHeader>
               <SheetTitle>
                 <Image
-                  src="/images/logo.png"
+                  src={wordmark}
                   alt="Workforcea Talent Solutions"
-                  width={868}
-                  height={509}
-                  className="h-12 w-auto object-contain"
+                  className="h-11 w-auto object-contain"
                 />
               </SheetTitle>
             </SheetHeader>
