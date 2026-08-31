@@ -35,7 +35,8 @@ export function AboutSection() {
           <Reveal direction="right">
             <div className="relative">
               <div className="overflow-hidden rounded-3xl border border-border">
-                <Image
+                <Image   
+                
                   src="/about-us.jpeg"
                   alt="Workforcea advisors reviewing a hiring plan with a client team"
                   width={800}
