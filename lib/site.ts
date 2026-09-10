@@ -13,16 +13,40 @@ export const SITE = {
   shortName: 'Workforcea',
   tagline: 'Connecting Talent, Enabling Growth',
   url: 'https://www.workforcea.com',
-  email: 'sunil@workforcea.com',
-  phone: '+91 91364 13386',
-  phoneHref: 'tel:+919136413386',
+  email: 'info@workforcea.com',
+  phone: '+91 91364 13326',
+  phoneHref: 'tel:+919136413326',
   address:
     "Level 4, D' Wing, MBC InfoTech Park, Ghodbunder Road, Kasarwadavali, Thane, Maharashtra – 400615",
   hours: 'Mon – Sat, 9:30 AM – 6:30 PM IST',
   linkedin: 'https://www.linkedin.com/company/workforcea/',
   linkedinFounder: 'https://www.linkedin.com/in/sunilyadava',
   instagram: 'https://www.instagram.com/workforcea_global',
+  x: 'https://x.com/Workforcea0',
+  facebook: 'https://www.facebook.com/Workforcea/',
   newsletterTitle: 'TA Leadership | Beyond Resume',
+}
+
+/** From the company visiting card. */
+export const FOUNDER = {
+  name: 'Sunil Yadav',
+  role: 'Founder & Talent Acquisition Advisor',
+  company: 'Workforcea Talent Solutions LLP',
+  strapline: 'Beyond Hiring. Building Capability.',
+  location: 'Thane | Mumbai | India',
+  expertise: [
+    'Executive Search',
+    'Permanent Hiring',
+    'Contract Staffing',
+    'Talent Advisory',
+    'Workforce Solutions',
+  ],
+  sectors: [
+    'IT & Tech',
+    'Engineering & Manufacturing',
+    'BFSI',
+    'Renewable Energy',
+  ],
 }
 
 /** Rendered in the footer and the contact card so both stay in sync. */
@@ -40,8 +64,20 @@ export const SOCIAL_LINKS = [
     icon: 'instagram' as const,
   },
   {
+    label: 'X',
+    ariaLabel: 'Workforcea on X',
+    href: SITE.x,
+    icon: 'x' as const,
+  },
+  {
+    label: 'Facebook',
+    ariaLabel: 'Workforcea on Facebook',
+    href: SITE.facebook,
+    icon: 'facebook' as const,
+  },
+  {
     label: "Founder's LinkedIn",
-    ariaLabel: 'Sunil Yadav, Founder & CEO, on LinkedIn',
+    ariaLabel: 'Sunil Yadav, Founder & Talent Acquisition Advisor, on LinkedIn',
     href: SITE.linkedinFounder,
     icon: 'user' as const,
   },
