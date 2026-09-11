@@ -8,27 +8,27 @@ const STEPS = [
   {
     title: 'Understand',
     description:
-      'We understand the business, the role, the team and the hiring objective — before we write a single search string.',
+      'We start with the business — the outcome the role has to deliver, the team around it and what success looks like in year one. Not just a job description.',
   },
   {
     title: 'Map',
     description:
-      'We map the relevant talent market and identify the right talent pools, including the people who are not actively looking.',
+      'We map the relevant talent market and the target companies, so you can see where the talent sits and what it costs before anyone is approached.',
   },
   {
     title: 'Engage',
     description:
-      'We approach, assess and engage candidates through a structured process, so every profile you see has been evaluated the same way.',
+      'Senior-led, considered outreach that can articulate the opportunity properly — including to the people who were not looking for a move.',
+  },
+  {
+    title: 'Assess',
+    description:
+      'Structured evaluation against the agreed success profile, so every profile you see has been through the same assessment and the comparison is real.',
   },
   {
     title: 'Deliver',
     description:
-      'We manage the process through interviews, offer, closure and onboarding — including the notice period, where most offers are lost.',
-  },
-  {
-    title: 'Build',
-    description:
-      'For ongoing requirements, we help you build scalable hiring capability that keeps working after the mandate closes.',
+      'We manage interviews, offer, negotiation, notice period and onboarding — the closure stages where good hires are most often lost.',
   },
 ]
 
@@ -39,7 +39,7 @@ export function ProcessSection() {
         <SectionHeading
           title="How We Work"
           subtitle="The same five steps on every mandate"
-          description="You should always know where a search stands and what happens next. This is the process behind every engagement, whatever its size."
+          description="We are involved in understanding your business and evaluating talent — not simply forwarding profiles. You always know where a search stands and what happens next."
         />
 
         <RevealGroup

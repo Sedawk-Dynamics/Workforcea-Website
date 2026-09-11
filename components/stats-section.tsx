@@ -8,17 +8,14 @@ import {
   type ReactNode,
 } from 'react'
 import { motion, useInView, useReducedMotion } from 'framer-motion'
-import { Users, Network, Globe2, MapPin } from 'lucide-react'
+import { Users, Network, Briefcase } from 'lucide-react'
 
 type Item = {
   key: string
   icon: ReactNode
-  /** Counts up when set; otherwise `heading` is shown as-is. */
-  value?: number
+  value: number
   suffix?: string
-  heading?: string
-  eyebrow?: string
-  label?: string
+  label: string
   description: string
   /** The middle card is raised and outlined. */
   featured?: boolean
@@ -26,38 +23,32 @@ type Item = {
 
 const ITEMS: Item[] = [
   {
+    key: 'experience',
+    icon: <Briefcase className="size-7" strokeWidth={1.7} aria-hidden="true" />,
+    value: 15,
+    suffix: '+',
+    label: 'Years in Talent Acquisition',
+    description:
+      'Hands-on experience across technology recruitment, leadership hiring and recruitment operations.',
+  },
+  {
     key: 'recruiters',
-    icon: <Users className="size-7" strokeWidth={1.7} aria-hidden="true" />,
+    icon: <Users className="size-8" strokeWidth={1.7} aria-hidden="true" />,
     value: 50,
     suffix: '+',
     label: 'Recruiters & Teams Led',
     description:
-      'Experienced professionals driving successful hiring outcomes.',
+      'Recruiters and hiring teams our founder has built and led over his career — not current headcount.',
+    featured: true,
   },
   {
     key: 'network',
     icon: <Network className="size-7" strokeWidth={1.7} aria-hidden="true" />,
-    value: 18,
-    suffix: 'K+',
+    value: 19000,
+    suffix: '+',
     label: 'Professional Network',
-    description: 'A vast network of skilled talent across industries and functions.',
-  },
-  {
-    key: 'focus',
-    icon: (
-      <span className="relative">
-        <Globe2 className="size-8" strokeWidth={1.6} aria-hidden="true" />
-        <MapPin
-          className="absolute -bottom-0.5 -right-1 size-4 fill-accent text-accent"
-          strokeWidth={2}
-          aria-hidden="true"
-        />
-      </span>
-    ),
-    eyebrow: 'Our Focus',
-    heading: 'USA + India',
-    description: 'Uniting opportunities and delivering exceptional talent across borders.',
-    featured: true,
+    description:
+      'A specialist network of technology, product and leadership professionals built over fifteen years.',
   },
 ]
 
@@ -97,7 +88,7 @@ function Counter({ value, suffix }: { value: number; suffix?: string }) {
 
   return (
     <span ref={ref} className="tabular-nums">
-      {display}
+      {display.toLocaleString('en-IN')}
       <span className="text-accent">{suffix}</span>
     </span>
   )
@@ -152,34 +143,14 @@ export function StatsSection() {
             </span>
 
             <dd className="order-none mt-5 flex flex-col items-center">
-              {item.eyebrow && (
-                <span className="text-xs font-bold uppercase tracking-[0.18em] text-accent">
-                  {item.eyebrow}
-                </span>
-              )}
-
-              {item.value !== undefined ? (
-                <span className="font-heading text-4xl font-extrabold tracking-tight text-navy lg:text-5xl">
-                  <Counter value={item.value} suffix={item.suffix} />
-                </span>
-              ) : (
-                <span
-                  className={`font-heading font-extrabold uppercase tracking-tight text-navy ${
-                    item.featured
-                      ? 'mt-2 text-xl leading-tight lg:text-2xl'
-                      : 'text-2xl lg:text-3xl'
-                  }`}
-                >
-                  {item.heading}
-                </span>
-              )}
+              <span className="font-heading text-4xl font-extrabold tracking-tight text-navy lg:text-[2.75rem]">
+                <Counter value={item.value} suffix={item.suffix} />
+              </span>
             </dd>
 
-            {item.label && (
-              <dt className="mt-2 text-xs font-bold uppercase leading-snug tracking-wide text-navy/75 lg:text-[0.8rem]">
-                {item.label}
-              </dt>
-            )}
+            <dt className="mt-2 text-xs font-bold uppercase leading-snug tracking-wide text-navy/75 lg:text-[0.8rem]">
+              {item.label}
+            </dt>
 
             {/* Rule with a dot, as in the reference layout. */}
             <span

@@ -13,8 +13,8 @@ export function ServicesSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeading
           title="What We Do"
-          subtitle="Six ways we help you hire"
-          description="From a single leadership appointment to a full Global Capability Center build-out — permanent, contract and embedded models, matched to how you actually need to hire."
+          subtitle="Specialist talent solutions, senior-led"
+          description="From a single leadership appointment to a full Global Capability Center build-out. Every engagement is built on business understanding and senior involvement — not on the volume of profiles we can send."
         />
 
         <RevealGroup

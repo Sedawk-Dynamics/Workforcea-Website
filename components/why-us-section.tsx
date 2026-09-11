@@ -1,6 +1,12 @@
 'use client'
 
-import { UserCheck, Network, LineChart, Gauge } from 'lucide-react'
+import {
+  UserCheck,
+  Network,
+  LineChart,
+  ShieldCheck,
+  Briefcase,
+} from 'lucide-react'
 import { motion } from 'framer-motion'
 import { RevealGroup, revealItem } from '@/components/motion/reveal'
 import { SectionHeading } from '@/components/section-heading'
@@ -10,25 +16,31 @@ const REASONS = [
     icon: UserCheck,
     title: 'Senior-led delivery',
     description:
-      'Every mandate gets experienced talent acquisition oversight. You deal with the person running the search, not an account manager.',
+      'Every mandate is run by an experienced talent acquisition leader. You deal with the person handling the search, not an account manager passing it down.',
   },
   {
     icon: Network,
     title: 'Specialist talent networks',
     description:
-      'Deep access to technology and leadership talent pools built over fifteen years — including an 18,000-strong professional network.',
+      'Direct access to technology, product and leadership talent pools built over fifteen years — including the people who are not on job boards.',
   },
   {
     icon: LineChart,
-    title: 'Market intelligence',
+    title: 'Talent market intelligence',
     description:
-      'Real-time understanding of talent availability, compensation and competitor hiring, so you plan against reality rather than assumptions.',
+      'A current read on availability, compensation and competitor hiring, so your plan is tested against the market before budgets are locked.',
   },
   {
-    icon: Gauge,
-    title: 'Speed with quality',
+    icon: ShieldCheck,
+    title: 'Quality over CV volume',
     description:
-      'A structured search and assessment process, supported by technology, that moves quickly without lowering the bar.',
+      'We send a short, evaluated shortlist rather than a stream of profiles. Fewer interviews, better conversations, faster decisions.',
+  },
+  {
+    icon: Briefcase,
+    title: 'Business-focused hiring',
+    description:
+      'We start with the business outcome the role exists to deliver, then hire against it — because hiring is a business decision, not an administrative one.',
   },
 ]
 
@@ -39,11 +51,11 @@ export function WhyUsSection() {
         <SectionHeading
           align="center"
           title="Why Workforcea"
-          subtitle="Four reasons clients give us the difficult roles"
+          subtitle="Why clients give us the roles that matter most"
         />
 
         <RevealGroup
-          className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
           stagger={0.08}
         >
           {REASONS.map((reason) => {

@@ -14,12 +14,11 @@ export function CtaSection() {
           <div className="relative flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
             <div className="max-w-xl">
               <h2 className="text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                Have a critical role to fill?
+                Have a role you can&apos;t afford to get wrong?
               </h2>
               <p className="mt-4 text-pretty leading-relaxed text-white/70">
-                Let&apos;s discuss it. Tell us the role, the timeline and the
-                constraints — we will come back within one business day with a
-                view on how to run it.
+                Tell us what you are trying to hire, the business context and
+                your timeline. We&apos;ll tell you how we would approach it.
               </p>
             </div>
 
@@ -30,7 +29,7 @@ export function CtaSection() {
                 size="lg"
                 className="bg-white px-6 text-navy hover:bg-white/90"
               >
-                Start a Conversation
+                Discuss Your Hiring Need
                 <ArrowUpRight data-icon="inline-end" />
               </Button>
               <Button

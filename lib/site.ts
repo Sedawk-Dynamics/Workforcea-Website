@@ -11,14 +11,14 @@ import {
 export const SITE = {
   name: 'Workforcea Talent Solutions LLP',
   shortName: 'Workforcea',
-  tagline: 'Connecting Talent, Enabling Growth',
+  tagline: 'Building Capability Beyond Hiring',
   url: 'https://www.workforcea.com',
   email: 'info@workforcea.com',
   phone: '+91 91364 13326',
   phoneHref: 'tel:+919136413326',
   address:
     "Level 4, D' Wing, MBC InfoTech Park, Ghodbunder Road, Kasarwadavali, Thane, Maharashtra – 400615",
-  hours: 'Mon – Sat, 9:30 AM – 6:30 PM IST',
+  hours: 'Monday – Friday, 9:30 AM – 6:30 PM IST',
   linkedin: 'https://www.linkedin.com/company/workforcea/',
   linkedinFounder: 'https://www.linkedin.com/in/sunilyadava',
   instagram: 'https://www.instagram.com/workforcea_global',
@@ -32,19 +32,23 @@ export const FOUNDER = {
   name: 'Sunil Yadav',
   role: 'Founder & Talent Acquisition Advisor',
   company: 'Workforcea Talent Solutions LLP',
-  strapline: 'Beyond Hiring. Building Capability.',
+  strapline: 'Building Capability Beyond Hiring',
   location: 'Thane | Mumbai | India',
+  /** The line the founder section is built around. */
+  principle:
+    'Hiring should be treated as a business decision, not just a recruitment activity.',
   expertise: [
+    'Technology Recruitment',
+    'Leadership Hiring',
     'Executive Search',
-    'Permanent Hiring',
-    'Contract Staffing',
     'Talent Advisory',
-    'Workforce Solutions',
+    'Recruitment Operations',
   ],
   sectors: [
-    'IT & Tech',
+    'Technology & Product',
+    'GCCs & Capability Centers',
+    'BFSI & FinTech',
     'Engineering & Manufacturing',
-    'BFSI',
     'Renewable Energy',
   ],
 }
@@ -101,141 +105,9 @@ export type Service = {
 
 export const SERVICES: Service[] = [
   {
-    slug: 'executive-search',
-    title: 'Executive Search',
-    short: 'Executive Search',
-    icon: Crown,
-    description:
-      'Confidential, senior-led search for CXO and board-level mandates, backed by structured assessment and full market mapping.',
-    headline: 'Executive search for the hires you cannot get wrong',
-    intro:
-      'When a single appointment shapes the next three years of the business, the search has to be run by someone who has done it before. Every Workforcea executive mandate is led personally by our founder, with a mapped market, a documented assessment process and complete confidentiality.',
-    whoItsFor: [
-      'Founders and boards appointing a CXO or business head',
-      'PE and VC-backed companies strengthening the leadership bench before a scale-up or raise',
-      'Global organizations appointing a country or GCC head in India',
-      'Companies replacing a critical leader discreetly, without signalling to the market',
-    ],
-    whatWeSolve: [
-      {
-        title: 'Thin or biased shortlists',
-        description:
-          'Most leadership shortlists come from whoever answered the phone. We map the full addressable market first, so you see the people who were never looking.',
-      },
-      {
-        title: 'Unstructured evaluation',
-        description:
-          'We agree the success profile with you up front and assess every candidate against it, so the final decision compares like with like.',
-      },
-      {
-        title: 'Confidentiality risk',
-        description:
-          'Sensitive replacements are handled on a no-name basis until you choose to disclose, protecting both the incumbent and the brand.',
-      },
-    ],
-    howWeWork: [
-      'Calibration: we agree the mandate, success profile and compensation range with the hiring stakeholders.',
-      'Market map: we build a full picture of the relevant talent pool and share it with you before approaching anyone.',
-      'Approach: senior-led, discreet outreach to the shortlist of target leaders.',
-      'Assessment: structured competency and leadership evaluation against the agreed profile.',
-      'Close: we manage offer, negotiation, notice period and onboarding through to day one.',
-    ],
-    rolesCovered: [
-      'CEO / Managing Director',
-      'CTO / CIO / CPO',
-      'CHRO & TA Leadership',
-      'CFO & Finance Leadership',
-      'Business & Country Heads',
-      'GCC Site Leaders',
-    ],
-    engagement: [
-      {
-        title: 'Retained search',
-        description:
-          'Exclusive, milestone-based engagement for board and CXO mandates where market coverage and confidentiality matter most.',
-      },
-      {
-        title: 'Exclusive search',
-        description:
-          'A single-partner engagement for senior appointments, with the full mapping process at a lighter commercial structure.',
-      },
-    ],
-    whyWorkforcea: [
-      'Every mandate is led by a talent acquisition leader with 15 years of experience, not handed to a junior researcher.',
-      'You see the market map, not just the shortlist.',
-      'Structured assessment means the decision is documented and defensible.',
-    ],
-  },
-  {
-    slug: 'leadership-hiring',
-    title: 'Leadership Hiring',
-    short: 'Leadership Hiring',
-    icon: Users,
-    description:
-      'Identifying and engaging the VP, director and head-of-function talent that carries delivery continuity as you scale.',
-    headline: 'The layer of leaders that turns strategy into delivery',
-    intro:
-      'Below the C-suite sits the layer that actually runs the business — VPs, directors, engineering and product leaders. It is the hardest layer to hire well and the most expensive to get wrong. We recruit it as a specialist discipline, not as senior-level volume hiring.',
-    whoItsFor: [
-      'Scale-ups building their first real management layer',
-      'Technology organizations hiring engineering, product or data leadership',
-      'Companies where a function has outgrown its current leader',
-      'GCCs appointing function heads as they move from build to run',
-    ],
-    whatWeSolve: [
-      {
-        title: 'Great individual contributors, poor leaders',
-        description:
-          'We assess for the things that actually differentiate at this level — team building, stakeholder management, and judgement under ambiguity.',
-      },
-      {
-        title: 'Long, drifting processes',
-        description:
-          'Leadership candidates disengage when a process stalls. We run to an agreed timeline and keep candidates warm throughout.',
-      },
-      {
-        title: 'Compensation misalignment',
-        description:
-          'We benchmark the role against live market data before the search starts, so offers land rather than get countered.',
-      },
-    ],
-    howWeWork: [
-      'Understand: we sit with the hiring manager to define the mandate, the team context and the first-year outcomes.',
-      'Map: we identify the relevant leadership pools across comparable organizations.',
-      'Engage: structured, senior-led approaches with a clear articulation of the opportunity.',
-      'Deliver: competency-based assessment, reference validation and offer management.',
-      'Build: we stay engaged through onboarding and the first ninety days.',
-    ],
-    rolesCovered: [
-      'VP / Director of Engineering',
-      'Head of Product',
-      'Head of Data / Analytics',
-      'Delivery & Program Leadership',
-      'Functional Business Heads',
-      'TA & HR Leadership',
-    ],
-    engagement: [
-      {
-        title: 'Exclusive engagement',
-        description:
-          'Single-partner search with agreed timelines and milestone reviews — the model we recommend for leadership roles.',
-      },
-      {
-        title: 'Contingent search',
-        description:
-          'Success-based hiring for leadership roles where you are running a parallel process.',
-      },
-    ],
-    whyWorkforcea: [
-      'Fifteen years of hiring and leading technology teams means we assess leaders on substance, not on job titles.',
-      'We have led recruitment teams ourselves, so we know what good delivery leadership looks like from the inside.',
-      'Senior oversight on every shortlist.',
-    ],
-  },
-  {
     slug: 'it-recruitment',
-    title: 'IT Recruitment',
-    short: 'IT Recruitment',
+    title: 'Technology Recruitment',
+    short: 'Technology Recruitment',
     icon: Code2,
     description:
       'Specialist technology and product hiring across engineering, cloud, data, security and platform roles at every seniority.',
@@ -306,6 +178,138 @@ export const SERVICES: Service[] = [
     ],
   },
   {
+    slug: 'leadership-hiring',
+    title: 'Leadership Hiring',
+    short: 'Leadership Hiring',
+    icon: Users,
+    description:
+      'Identifying and engaging the VP, director and head-of-function talent that carries delivery continuity as you scale.',
+    headline: 'The layer of leaders that turns strategy into delivery',
+    intro:
+      'Below the C-suite sits the layer that actually runs the business — VPs, directors, engineering and product leaders. It is the hardest layer to hire well and the most expensive to get wrong. We recruit it as a specialist discipline, not as senior-level volume hiring.',
+    whoItsFor: [
+      'Scale-ups building their first real management layer',
+      'Technology organizations hiring engineering, product or data leadership',
+      'Companies where a function has outgrown its current leader',
+      'GCCs appointing function heads as they move from build to run',
+    ],
+    whatWeSolve: [
+      {
+        title: 'Great individual contributors, poor leaders',
+        description:
+          'We assess for the things that actually differentiate at this level — team building, stakeholder management, and judgement under ambiguity.',
+      },
+      {
+        title: 'Long, drifting processes',
+        description:
+          'Leadership candidates disengage when a process stalls. We run to an agreed timeline and keep candidates warm throughout.',
+      },
+      {
+        title: 'Compensation misalignment',
+        description:
+          'We benchmark the role against live market data before the search starts, so offers land rather than get countered.',
+      },
+    ],
+    howWeWork: [
+      'Understand: we sit with the hiring manager to define the mandate, the team context and the first-year outcomes.',
+      'Map: we identify the relevant leadership pools across comparable organizations.',
+      'Engage: structured, senior-led approaches with a clear articulation of the opportunity.',
+      'Deliver: competency-based assessment, reference validation and offer management.',
+      'Build: we stay engaged through onboarding and the first ninety days.',
+    ],
+    rolesCovered: [
+      'VP / Director of Engineering',
+      'Head of Product',
+      'Head of Data / Analytics',
+      'Delivery & Program Leadership',
+      'Functional Business Heads',
+      'TA & HR Leadership',
+    ],
+    engagement: [
+      {
+        title: 'Exclusive engagement',
+        description:
+          'Single-partner search with agreed timelines and milestone reviews — the model we recommend for leadership roles.',
+      },
+      {
+        title: 'Contingent search',
+        description:
+          'Success-based hiring for leadership roles where you are running a parallel process.',
+      },
+    ],
+    whyWorkforcea: [
+      'Fifteen years of hiring and leading technology teams means we assess leaders on substance, not on job titles.',
+      'We have led recruitment teams ourselves, so we know what good delivery leadership looks like from the inside.',
+      'Senior oversight on every shortlist.',
+    ],
+  },
+  {
+    slug: 'executive-search',
+    title: 'Executive Search',
+    short: 'Executive Search',
+    icon: Crown,
+    description:
+      'Confidential, senior-led search for CXO and board-level mandates, backed by structured assessment and full market mapping.',
+    headline: 'Executive search for the hires you cannot get wrong',
+    intro:
+      'When a single appointment shapes the next three years of the business, the search has to be run by someone who has done it before. Every Workforcea executive mandate is led personally by our founder, with a mapped market, a documented assessment process and complete confidentiality.',
+    whoItsFor: [
+      'Founders and boards appointing a CXO or business head',
+      'PE and VC-backed companies strengthening the leadership bench before a scale-up or raise',
+      'Global organizations appointing a country or GCC head in India',
+      'Companies replacing a critical leader discreetly, without signalling to the market',
+    ],
+    whatWeSolve: [
+      {
+        title: 'Thin or biased shortlists',
+        description:
+          'Most leadership shortlists come from whoever answered the phone. We map the full addressable market first, so you see the people who were never looking.',
+      },
+      {
+        title: 'Unstructured evaluation',
+        description:
+          'We agree the success profile with you up front and assess every candidate against it, so the final decision compares like with like.',
+      },
+      {
+        title: 'Confidentiality risk',
+        description:
+          'Sensitive replacements are handled on a no-name basis until you choose to disclose, protecting both the incumbent and the brand.',
+      },
+    ],
+    howWeWork: [
+      'Calibration: we agree the mandate, success profile and compensation range with the hiring stakeholders.',
+      'Market map: we build a full picture of the relevant talent pool and share it with you before approaching anyone.',
+      'Approach: senior-led, discreet outreach to the shortlist of target leaders.',
+      'Assessment: structured competency and leadership evaluation against the agreed profile.',
+      'Close: we manage offer, negotiation, notice period and onboarding through to day one.',
+    ],
+    rolesCovered: [
+      'CEO / Managing Director',
+      'CTO / CIO / CPO',
+      'CHRO & TA Leadership',
+      'CFO & Finance Leadership',
+      'Business & Country Heads',
+      'GCC Site Leaders',
+    ],
+    engagement: [
+      {
+        title: 'Retained search',
+        description:
+          'Exclusive, milestone-based engagement for board and CXO mandates where market coverage and confidentiality matter most.',
+      },
+      {
+        title: 'Exclusive search',
+        description:
+          'A single-partner engagement for senior appointments, with the full mapping process at a lighter commercial structure.',
+      },
+    ],
+    whyWorkforcea: [
+      'Every mandate is led by a talent acquisition leader with 15 years of experience, not handed to a junior researcher.',
+      'You see the market map, not just the shortlist.',
+      'Structured assessment means the decision is documented and defensible.',
+    ],
+  },
+  {
     slug: 'gcc-hiring',
     title: 'GCC Hiring',
     short: 'GCC Hiring',
@@ -373,8 +377,8 @@ export const SERVICES: Service[] = [
   },
   {
     slug: 'rpo',
-    title: 'Recruitment Process Outsourcing',
-    short: 'RPO',
+    title: 'RPO & Embedded Recruitment',
+    short: 'RPO & Embedded',
     icon: Workflow,
     description:
       'Flexible RPO models that embed our hiring capability directly inside your talent function for sustained, predictable scale.',
@@ -444,8 +448,8 @@ export const SERVICES: Service[] = [
   },
   {
     slug: 'workforce-strategy',
-    title: 'Workforce Strategy Advisory',
-    short: 'Workforce Advisory',
+    title: 'Workforce Solutions',
+    short: 'Workforce Solutions',
     icon: LineChart,
     description:
       'Demand planning, market intelligence and hiring frameworks that make the headcount plan achievable before you commit to it.',
@@ -515,12 +519,12 @@ export function getService(slug: string) {
 }
 
 export const HIRING_TYPES = [
-  'Permanent Hiring',
+  'Technology Recruitment',
+  'Leadership Hiring',
   'Executive Search',
-  'Contract Staffing',
-  'RPO',
-  'GCC Build',
-  'Workforce Advisory',
+  'GCC Hiring',
+  'RPO & Embedded Recruitment',
+  'Workforce Solutions',
 ]
 
 export const POSITION_COUNTS = ['1', '2-5', '6-20', '21-50', '50+']

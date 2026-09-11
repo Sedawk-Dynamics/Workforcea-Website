@@ -102,7 +102,7 @@ export function SplashScreen() {
       </div>
 
       <p className="relative text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-        Connecting Talent, Enabling Growth
+        Building Capability Beyond Hiring
       </p>
     </div>
   )

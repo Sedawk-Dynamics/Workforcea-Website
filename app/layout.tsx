@@ -19,12 +19,12 @@ const _headingFont = Plus_Jakarta_Sans({
 })
 
 const DESCRIPTION =
-  'Workforcea Talent Solutions LLP is a specialist recruitment firm for technology and leadership hiring — executive search, IT recruitment, GCC hiring, RPO and workforce advisory, built on 15 years of talent acquisition leadership.'
+  'Workforcea helps businesses hire critical talent and build stronger teams — specialist talent solutions across technology recruitment, leadership hiring, executive search, GCC hiring, RPO and workforce solutions, built on 15+ years of talent acquisition leadership.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: 'Workforcea | Technology & Leadership Recruitment',
+    default: 'Workforcea | Building Capability Beyond Hiring',
     template: `%s | ${SITE.shortName}`,
   },
   description: DESCRIPTION,
@@ -34,14 +34,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     siteName: SITE.name,
-    title: 'Workforcea | Technology & Leadership Recruitment',
+    title: 'Workforcea | Building Capability Beyond Hiring',
     description: DESCRIPTION,
     url: '/',
     locale: 'en_IN',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Workforcea | Technology & Leadership Recruitment',
+    title: 'Workforcea | Building Capability Beyond Hiring',
     description: DESCRIPTION,
   },
   icons: {

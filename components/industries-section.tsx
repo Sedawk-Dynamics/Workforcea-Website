@@ -30,6 +30,13 @@ const INDUSTRIES: Industry[] = [
       'SaaS, platform and product organizations hiring across the engineering and product stack.',
   },
   {
+    icon: Globe2,
+    image: gccImg,
+    title: 'GCCs & Capability Centers',
+    description:
+      'Global organizations establishing and scaling capability centers in India.',
+  },
+  {
     icon: Landmark,
     image: bfsiImg,
     title: 'BFSI & FinTech',
@@ -42,6 +49,7 @@ const INDUSTRIES: Industry[] = [
     title: 'Engineering & Manufacturing',
     description:
       'Industrial businesses hiring engineering, plant and digital transformation talent.',
+    wide: true,
   },
   {
     icon: Wind,
@@ -49,14 +57,6 @@ const INDUSTRIES: Industry[] = [
     title: 'Renewable Energy',
     description:
       'Solar, wind and storage companies building project, engineering and leadership teams as they scale.',
-    wide: true,
-  },
-  {
-    icon: Globe2,
-    image: gccImg,
-    title: 'GCCs & Capability Centers',
-    description:
-      'Global organizations establishing and scaling capability centers in India.',
     wide: true,
   },
 ]

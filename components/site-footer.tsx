@@ -14,6 +14,7 @@ const NAV_LINKS = [
   { label: 'Industries', href: '/#industries' },
   { label: 'Roles We Hire', href: '/#roles' },
   { label: 'How We Work', href: '/#how-we-work' },
+  { label: 'What You Get', href: '/#outcomes' },
   { label: 'Contact', href: '/#contact' },
 ]
 
@@ -110,7 +111,7 @@ export function SiteFooter() {
           <p>
             &copy; {currentYear} {SITE.name}. All rights reserved.
           </p>
-          <p>{SITE.tagline}.</p>
+          <p>{SITE.tagline}</p>
         </div>
       </div>
     </footer>

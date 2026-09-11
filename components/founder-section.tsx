@@ -6,7 +6,7 @@ import {
   ArrowUpRight,
   Crown,
   UserCheck,
-  FileSignature,
+  Globe2,
   Compass,
   Workflow,
   Cpu,
@@ -26,17 +26,18 @@ import { FOUNDER, SITE } from '@/lib/site'
 import founderPhoto from '@/public/images/sunil.jpg'
 
 const EXPERTISE_ICONS: Record<string, LucideIcon> = {
+  'Technology Recruitment': Cpu,
+  'Leadership Hiring': UserCheck,
   'Executive Search': Crown,
-  'Permanent Hiring': UserCheck,
-  'Contract Staffing': FileSignature,
   'Talent Advisory': Compass,
-  'Workforce Solutions': Workflow,
+  'Recruitment Operations': Workflow,
 }
 
 const SECTOR_ICONS: Record<string, LucideIcon> = {
-  'IT & Tech': Cpu,
+  'Technology & Product': Cpu,
+  'GCCs & Capability Centers': Globe2,
+  'BFSI & FinTech': Landmark,
   'Engineering & Manufacturing': Factory,
-  BFSI: Landmark,
   'Renewable Energy': Wind,
 }
 
@@ -76,7 +77,8 @@ export function FounderSection() {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeading
           title="The Founder"
-          subtitle={FOUNDER.strapline}
+          subtitle="Founder-led talent acquisition"
+          description="Workforcea is built on fifteen years of hands-on talent acquisition leadership — and that experience stays on every mandate."
         />
 
         <div className="mt-12 grid items-start gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12">
@@ -214,21 +216,22 @@ export function FounderSection() {
                           <strong className="font-semibold text-navy">
                             {FOUNDER.name}
                           </strong>
-                          , a talent acquisition leader with fifteen years of
-                          experience across technology recruitment, leadership
-                          hiring, stakeholder management and recruitment
-                          operations — including building and leading
-                          recruitment teams of fifty-plus recruiters across US,
-                          India and global markets.
+                          , a talent acquisition leader with 15+ years across
+                          technology recruitment, leadership hiring, executive
+                          search and recruitment operations — including
+                          building and leading recruitment teams of fifty-plus
+                          recruiters.
+                        </p>
+                        <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
+                          That background is the foundation of the firm. It is
+                          why Workforcea can tell you early whether a hiring
+                          plan is realistic, what the market will cost you and
+                          how a critical search should be run — and why senior
+                          judgement stays on the mandate from brief to closure.
                         </p>
                         <blockquote className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-tint p-6">
                           <p className="text-balance font-heading text-lg font-semibold leading-[1.5] tracking-tight text-navy sm:text-xl">
-                            &ldquo;I spent fifteen years hiring for other
-                            companies and leading their recruitment teams.
-                            Workforcea exists because the hires that matter most
-                            are still handled with the least care. We take the
-                            roles a business cannot afford to get wrong, and we
-                            run them properly.&rdquo;
+                            &ldquo;{FOUNDER.principle}&rdquo;
                           </p>
                         </blockquote>
                       </div>

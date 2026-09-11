@@ -7,6 +7,7 @@ import { IndustriesSection } from '@/components/industries-section'
 import { RolesSection } from '@/components/roles-section'
 import { WhyUsSection } from '@/components/why-us-section'
 import { ProcessSection } from '@/components/process-section'
+import { OutcomesSection } from '@/components/outcomes-section'
 import { FounderSection } from '@/components/founder-section'
 import { InsightsSection } from '@/components/insights-section'
 import { CtaSection } from '@/components/cta-section'
@@ -26,6 +27,7 @@ export default function Page() {
         <RolesSection />
         <WhyUsSection />
         <ProcessSection />
+        <OutcomesSection />
         <FounderSection />
         <InsightsSection />
         <CtaSection />

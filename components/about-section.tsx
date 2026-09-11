@@ -11,19 +11,19 @@ const PILLARS = [
     icon: Target,
     title: 'Our Mission',
     description:
-      'To help companies hire the technology and leadership talent that determines whether the business plan actually happens.',
+      'To help businesses hire critical talent and build stronger teams — treating every hire as a business decision, not a recruitment transaction.',
   },
   {
     icon: Eye,
     title: 'Our Vision',
     description:
-      'To be the recruitment partner technology-led businesses and Global Capability Centers call first when a role really counts.',
+      'To be the talent partner technology-led businesses and Global Capability Centers call first when a role really counts.',
   },
   {
     icon: Compass,
     title: 'Our Values',
     description:
-      'Senior people on every mandate, honest market advice, and long-term partnership over transactional recruitment.',
+      'Senior people on every mandate, honest market advice, and quality over CV volume — always.',
   },
 ]
 
@@ -52,16 +52,15 @@ export function AboutSection() {
           <div>
             <SectionHeading
               title="About Workforcea"
-              subtitle="A new firm. Fifteen years of hiring experience behind it."
-              description="Workforcea Talent Solutions LLP is a specialist recruitment firm for technology and leadership hiring. We work with product-led businesses, technology companies and Global Capability Centers to fill the roles that carry the most risk — and to build the teams around them."
+              subtitle="A boutique firm. Fifteen years of hiring experience behind it."
+              description="Workforcea Talent Solutions LLP is a specialist talent acquisition firm for technology and leadership hiring. We help businesses hire critical talent and build stronger teams — working India-first with product-led companies, growth-stage businesses and Global Capability Centers."
             />
 
             <Reveal delay={0.16}>
               <p className="mt-4 max-w-3xl text-pretty leading-relaxed text-muted-foreground">
-                That experience is why we can tell you early whether a hiring
-                plan is realistic, what it will cost and how long it will
-                actually take — rather than letting you find out three months
-                into a search.
+                Our strength is not the number of recruiters we have. It is
+                experience, judgement, market understanding and senior
+                involvement in the hiring decisions that carry the most risk.
               </p>
             </Reveal>
           </div>

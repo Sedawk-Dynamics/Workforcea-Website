@@ -24,6 +24,7 @@ const NAV_LINKS = [
   { label: 'Industries', href: '/#industries' },
   { label: 'Roles', href: '/#roles' },
   { label: 'How We Work', href: '/#how-we-work' },
+  { label: 'What You Get', href: '/#outcomes' },
   { label: 'Contact', href: '/#contact' },
 ]
 
