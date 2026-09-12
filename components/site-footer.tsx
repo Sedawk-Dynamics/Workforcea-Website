@@ -15,6 +15,7 @@ const NAV_LINKS = [
   { label: 'Roles We Hire', href: '/#roles' },
   { label: 'How We Work', href: '/#how-we-work' },
   { label: 'What You Get', href: '/#outcomes' },
+  { label: 'Gallery', href: '/gallery' },
   { label: 'Contact', href: '/#contact' },
 ]
 

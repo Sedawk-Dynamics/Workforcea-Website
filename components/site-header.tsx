@@ -25,10 +25,11 @@ const NAV_LINKS = [
   { label: 'Roles', href: '/#roles' },
   { label: 'How We Work', href: '/#how-we-work' },
   { label: 'What You Get', href: '/#outcomes' },
+  { label: 'Gallery', href: '/gallery' },
   { label: 'Contact', href: '/#contact' },
 ]
 
-function ServicesDropdown({ isScrolled }: { isScrolled: boolean }) {
+function ServicesDropdown() {
   const [open, setOpen] = useState(false)
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const wrapperRef = useRef<HTMLDivElement>(null)
@@ -87,10 +88,7 @@ function ServicesDropdown({ isScrolled }: { isScrolled: boolean }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 8 }}
             transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
-            className={cn(
-              'absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3',
-              !isScrolled && 'drop-shadow-xl',
-            )}
+            className="absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3"
           >
             <ul className="overflow-hidden rounded-2xl border border-border bg-white p-2 shadow-xl">
               {SERVICES.map((service) => {
@@ -140,10 +138,8 @@ export function SiteHeader() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
-        'fixed inset-x-0 top-0 z-50 transition-all duration-300',
-        isScrolled
-          ? 'border-b border-border bg-background/90 backdrop-blur-md'
-          : 'border-b border-transparent bg-transparent',
+        'fixed inset-x-0 top-0 z-50 border-b border-border bg-white transition-shadow duration-300',
+        isScrolled && 'shadow-[0_8px_24px_-16px_rgba(11,31,61,0.45)]',
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
@@ -163,7 +159,7 @@ export function SiteHeader() {
         <nav className="hidden items-center gap-7 lg:flex xl:gap-9">
           {NAV_LINKS.map((link) =>
             link.hasDropdown ? (
-              <ServicesDropdown key={link.href} isScrolled={isScrolled} />
+              <ServicesDropdown key={link.href} />
             ) : (
               <a
                 key={link.href}

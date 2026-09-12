@@ -1,3 +1,4 @@
+import { SplashScreen } from '@/components/splash-screen'
 import { SiteHeader } from '@/components/site-header'
 import { HeroSection } from '@/components/hero-section'
 import { StatsSection } from '@/components/stats-section'
@@ -17,6 +18,7 @@ import { SiteFooter } from '@/components/site-footer'
 export default function Page() {
   return (
     <>
+      <SplashScreen />
       <SiteHeader />
       <main>
         <HeroSection />

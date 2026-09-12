@@ -2,7 +2,6 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Plus_Jakarta_Sans, Inter } from 'next/font/google'
 import { Toaster } from '@/components/ui/sonner'
-import { SplashScreen } from '@/components/splash-screen'
 import { SITE } from '@/lib/site'
 import './globals.css'
 
@@ -89,7 +88,6 @@ export default function RootLayout({
         </noscript>
       </head>
       <body className="antialiased">
-        <SplashScreen />
         {children}
         <Toaster position="bottom-right" />
         {process.env.NODE_ENV === 'production' && <Analytics />}

@@ -51,6 +51,19 @@ export const FOUNDER = {
     'Engineering & Manufacturing',
     'Renewable Energy',
   ],
+  /** The three figures that carry the founder's credibility at a glance. */
+  credentials: [
+    { value: '15+', label: 'Years in TA' },
+    { value: '50+', label: 'Recruiters Led' },
+    { value: '19K+', label: 'Network' },
+  ],
+  /** Career highlights, shown as the evidence behind the profile. */
+  highlights: [
+    'Built and led recruitment teams of fifty-plus recruiters.',
+    'Hired across technology, product, data and leadership mandates.',
+    'Ran recruitment operations, process and reporting at scale.',
+    'Advised founders and hiring leaders on critical appointments.',
+  ],
 }
 
 /** Rendered in the footer and the contact card so both stay in sync. */
@@ -79,11 +92,127 @@ export const SOCIAL_LINKS = [
     href: SITE.facebook,
     icon: 'facebook' as const,
   },
+]
+
+export type GalleryItem = {
+  src: string
+  alt: string
+  title: string
+  caption: string
+  category: (typeof GALLERY_CATEGORIES)[number]
+}
+
+export const GALLERY_CATEGORIES = [
+  'Thought Leadership',
+  'Leadership & Events',
+  'Learning & Credentials',
+] as const
+
+/** Sourced from the founder's own LinkedIn newsletter, posts and press coverage. */
+export const GALLERY: GalleryItem[] = [
   {
-    label: "Founder's LinkedIn",
-    ariaLabel: 'Sunil Yadav, Founder & Talent Acquisition Advisor, on LinkedIn',
-    href: SITE.linkedinFounder,
-    icon: 'user' as const,
+    src: '/images/gallery/newsletter-ta-reset.png',
+    alt: 'Leadership Beyond Resume, Edition 11 — The Talent Acquisition Reset',
+    title: 'The Talent Acquisition Reset',
+    caption:
+      'Edition 11 of Leadership Beyond Resume: talent acquisition does not need another transformation, it needs to stop doing a few things that never worked.',
+    category: 'Thought Leadership',
+  },
+  {
+    src: '/images/gallery/insight-culture-fit.png',
+    alt: 'Why culture fit is often a leadership escape',
+    title: 'Culture fit is often a leadership escape',
+    caption:
+      'Rejecting a candidate on "culture fit" is usually a symptom of unclear leadership expectations, not a real assessment.',
+    category: 'Thought Leadership',
+  },
+  {
+    src: '/images/gallery/insight-interview-assessment.jpg',
+    alt: 'The interview is not the assessment',
+    title: 'The interview is not the assessment',
+    caption:
+      'Acing an interview and performing in the role are different skills. Structured evaluation is what closes the gap.',
+    category: 'Thought Leadership',
+  },
+  {
+    src: '/images/gallery/milestone-followers.jpg',
+    alt: '18,000+ LinkedIn followers milestone',
+    title: 'A community of 18,000+',
+    caption:
+      'HR is strategy, not support. Talent is the business. The professional network behind Workforcea, built one honest conversation at a time.',
+    category: 'Thought Leadership',
+  },
+  {
+    src: '/images/gallery/event-speaking.jpg',
+    alt: 'Speaking from the floor at a leadership forum',
+    title: 'Taking the floor',
+    caption:
+      'Contributing to the conversation at an executive leadership forum.',
+    category: 'Leadership & Events',
+  },
+  {
+    src: '/images/gallery/event-elevate-group.jpg',
+    alt: 'Delegates at the Elevate leadership retreat',
+    title: 'Elevate leadership retreat',
+    caption:
+      'Two days with 135+ executives on identity, leading through uncertainty and networks as multipliers.',
+    category: 'Leadership & Events',
+  },
+  {
+    src: '/images/gallery/event-leaders-club.jpg',
+    alt: 'Executive Leaders Club gathering',
+    title: 'Executive Leaders Club',
+    caption:
+      'Among the leaders and founders who make up the wider Workforcea network.',
+    category: 'Leadership & Events',
+  },
+  {
+    src: '/images/gallery/event-cohort.jpg',
+    alt: 'Leadership programme cohort photograph',
+    title: 'The cohort',
+    caption:
+      'Peer groups like this are where market intelligence actually comes from.',
+    category: 'Leadership & Events',
+  },
+  {
+    src: '/images/gallery/event-networking.jpg',
+    alt: 'Networking with fellow business leaders',
+    title: 'Building the network',
+    caption:
+      'Relationships with senior leaders across industries — the foundation of specialist talent networks.',
+    category: 'Leadership & Events',
+  },
+  {
+    src: '/images/gallery/event-peers.jpg',
+    alt: 'With a fellow leader at the Executive Leaders Club',
+    title: 'Peers, not vendors',
+    caption:
+      'We work with hiring leaders as peers, which is why the conversation starts with the business, not a requisition.',
+    category: 'Leadership & Events',
+  },
+  {
+    src: '/images/gallery/iim-indore-inauguration.jpg',
+    alt: 'IIM Indore Executive Management Programme inauguration ceremony',
+    title: 'IIM Indore | EMP-MMS',
+    caption:
+      'Inauguration of the Executive Management Programme, Master of Management Studies at IIM Indore.',
+    category: 'Learning & Credentials',
+  },
+  {
+    src: '/images/gallery/iim-indore-campus.jpg',
+    alt: 'At the Indian Institute of Management Indore campus',
+    title: 'Back to the classroom',
+    caption:
+      'Fifteen years of practice, still learning — because advising on hiring means staying current on the business.',
+    category: 'Learning & Credentials',
+  },
+  {
+    src: '/images/gallery/press-feature.jpg',
+    alt: 'Newspaper feature on Sunil Yadav joining the IIM Indore EMP-MMS programme',
+    title: 'In the press',
+    caption:
+      'Regional press coverage of the IIM Indore EMP-MMS cohort, featuring founder Sunil Yadav.',
+    category: 'Learning & Credentials',
   },
 ]
 

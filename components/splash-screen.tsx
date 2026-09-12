@@ -8,10 +8,18 @@ const HOLD_MS = 4000
 const FADE_MS = 500
 
 /**
- * Full-screen brand loader shown on a fresh page load. It sits on top of the
- * real page rather than replacing it, so content is always in the DOM for
- * crawlers, and it is rendered on the server so there is no flash of the site
- * before it appears.
+ * Module-scoped, so it survives client-side navigation but resets on a real
+ * page load. That keeps the loader on the first landing only: returning to the
+ * homepage from another page does not replay it. The server always starts
+ * false, so the loader is still in the initial HTML with no flash.
+ */
+let hasPlayed = false
+
+/**
+ * Full-screen brand loader shown on a fresh page load of the homepage. It sits
+ * on top of the real page rather than replacing it, so content is always in the
+ * DOM for crawlers, and it is rendered on the server so there is no flash of
+ * the site before it appears.
  */
 export function SplashScreen() {
   const [leaving, setLeaving] = useState(false)
@@ -19,6 +27,13 @@ export function SplashScreen() {
 
   useEffect(() => {
     if (done) return
+
+    // Arrived here by client-side navigation — the loader has had its turn.
+    if (hasPlayed) {
+      setDone(true)
+      return
+    }
+    hasPlayed = true
 
     const hold = setTimeout(() => setLeaving(true), HOLD_MS)
     const finish = setTimeout(() => setDone(true), HOLD_MS + FADE_MS)
