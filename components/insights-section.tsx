@@ -52,7 +52,7 @@ export function InsightsSection() {
           </a>
 
           <a
-            href={SITE.linkedin}
+            href={SITE.newsletter}
             target="_blank"
             rel="noreferrer noopener"
             className="group flex items-center justify-between gap-4 rounded-2xl border border-border bg-white p-5 transition-shadow hover:shadow-lg hover:shadow-navy/5"

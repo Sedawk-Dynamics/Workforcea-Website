@@ -11,19 +11,20 @@ const PILLARS = [
     icon: Target,
     title: 'Our Mission',
     description:
-      'To help businesses hire critical talent and build stronger teams — treating every hire as a business decision, not a recruitment transaction.',
+      'To connect businesses with critical talent and build teams that create lasting business impact.',
   },
   {
     icon: Eye,
     title: 'Our Vision',
     description:
-      'To be the talent partner technology-led businesses and Global Capability Centers call first when a role really counts.',
+      'To be the talent partner businesses trust when the right people matter most.',
   },
   {
     icon: Compass,
     title: 'Our Values',
+    lead: 'Integrity. Expertise. Accountability. Partnership. Quality over volume.',
     description:
-      'Senior people on every mandate, honest market advice, and quality over CV volume — always.',
+      'We understand before we search, advise honestly, take ownership of every mandate, and never compromise quality for numbers.',
   },
 ]
 
@@ -85,6 +86,11 @@ export function AboutSection() {
                 <h3 className="mt-6 font-heading text-xl font-bold text-navy">
                   {pillar.title}
                 </h3>
+                {'lead' in pillar && (
+                  <p className="mt-3 text-sm font-semibold leading-relaxed text-accent">
+                    {pillar.lead}
+                  </p>
+                )}
                 <p className="mt-3 text-[0.95rem] leading-relaxed text-muted-foreground">
                   {pillar.description}
                 </p>

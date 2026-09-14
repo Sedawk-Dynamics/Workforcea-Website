@@ -24,7 +24,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Reveal } from '@/components/motion/reveal'
 import { SectionHeading } from '@/components/section-heading'
 import { FOUNDER, SITE } from '@/lib/site'
-import founderPhoto from '@/public/images/sunil.jpg'
+import founderPhoto from '@/public/founder-image.jpeg'
 
 const EXPERTISE_ICONS: Record<string, LucideIcon> = {
   'Technology Recruitment': Cpu,

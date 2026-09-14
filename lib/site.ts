@@ -25,6 +25,8 @@ export const SITE = {
   x: 'https://x.com/Workforcea0',
   facebook: 'https://www.facebook.com/Workforcea/',
   newsletterTitle: 'TA Leadership | Beyond Resume',
+  newsletter:
+    'https://www.linkedin.com/newsletters/ta-leadership-beyond-resumes-7418588126090178560',
 }
 
 /** From the company visiting card. */
