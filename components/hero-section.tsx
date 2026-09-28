@@ -64,16 +64,29 @@ export function HeroSection() {
               </Button>
             </div>
 
-            <ul className="mt-9 flex flex-wrap items-center gap-x-3 gap-y-2">
-              {PROOF.map((item) => (
-                <li
-                  key={item}
-                  className="rounded-full border border-border bg-brand-tint px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-navy/75"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
+            {/* Proof ticker. The track carries two identical copies of the
+                list, so the -50% loop is seamless; the second copy is hidden
+                from assistive tech, which reads the first. */}
+            <div className="marquee-mask group mt-9 overflow-hidden">
+              <div className="marquee-track flex w-max items-center gap-3 group-hover:[animation-play-state:paused]">
+                {[0, 1].map((copy) => (
+                  <ul
+                    key={copy}
+                    aria-hidden={copy === 1 ? 'true' : undefined}
+                    className="flex shrink-0 items-center gap-3 pr-3"
+                  >
+                    {PROOF.map((item) => (
+                      <li
+                        key={item}
+                        className="shrink-0 whitespace-nowrap rounded-full border border-border bg-brand-tint px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-navy/75"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                ))}
+              </div>
+            </div>
           </div>
 
           <HeroCarousel />
