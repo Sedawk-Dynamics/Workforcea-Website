@@ -1,6 +1,7 @@
 import { SplashScreen } from '@/components/splash-screen'
 import { SiteHeader } from '@/components/site-header'
 import { HeroSection } from '@/components/hero-section'
+import { ExpertiseSection } from '@/components/expertise-section'
 import { StatsSection } from '@/components/stats-section'
 import { AboutSection } from '@/components/about-section'
 import { ServicesSection } from '@/components/services-section'
@@ -22,6 +23,7 @@ export default function Page() {
       <SiteHeader />
       <main>
         <HeroSection />
+        <ExpertiseSection />
         <StatsSection />
         <AboutSection />
         <ServicesSection />
