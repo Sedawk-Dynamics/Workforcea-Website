@@ -1,89 +1,182 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowUpRight } from 'lucide-react'
+import {
+  ArrowUpRight,
+  Code2,
+  Boxes,
+  BrainCircuit,
+  Cloud,
+  ShieldCheck,
+  Factory,
+  Crown,
+  Briefcase,
+  Plus,
+  type LucideIcon,
+} from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Reveal } from '@/components/motion/reveal'
 import { RevealGroup, revealItem } from '@/components/motion/reveal'
 import { SectionHeading } from '@/components/section-heading'
 
-const ROLE_GROUPS = [
+type RoleGroup = {
+  title: string
+  icon: LucideIcon
+  roles: string[]
+}
+
+const ROLE_GROUPS: RoleGroup[] = [
   {
     title: 'Technology',
-    roles: ['Software Engineering', 'Platform & Infrastructure', 'QA & Automation'],
+    icon: Code2,
+    roles: [
+      'Software Engineering',
+      'Platform & Infrastructure',
+      'QA & Automation',
+    ],
   },
   {
     title: 'Product',
+    icon: Boxes,
     roles: ['Product Management', 'Product Design & UX', 'Program & Delivery'],
   },
   {
     title: 'Data & AI',
-    roles: ['Data Engineering', 'Data Science & Analytics', 'AI & Machine Learning'],
+    icon: BrainCircuit,
+    roles: [
+      'Data Engineering',
+      'Data Science & Analytics',
+      'AI & Machine Learning',
+    ],
   },
   {
     title: 'Cloud & DevOps',
+    icon: Cloud,
     roles: ['Cloud Architecture', 'DevOps & SRE', 'Automation & Tooling'],
   },
   {
     title: 'Cybersecurity',
+    icon: ShieldCheck,
     roles: ['Security Engineering', 'GRC & Compliance', 'Identity & Access'],
   },
   {
     title: 'Engineering',
-    roles: ['Design & R&D', 'Manufacturing & Plant', 'Project & Site Leadership'],
+    icon: Factory,
+    roles: [
+      'Design & R&D',
+      'Manufacturing & Plant',
+      'Project & Site Leadership',
+    ],
   },
   {
     title: 'Leadership',
+    icon: Crown,
     roles: ['CXO & Business Heads', 'VP / Director', 'Function & Practice Heads'],
   },
   {
     title: 'Business & Specialist Roles',
-    roles: ['Sales & Revenue Leadership', 'Finance & Strategy', 'HR & Talent Acquisition'],
+    icon: Briefcase,
+    roles: [
+      'Sales & Revenue Leadership',
+      'Finance & Strategy',
+      'HR & Talent Acquisition',
+    ],
   },
 ]
 
+function FlipCard({ group }: { group: RoleGroup }) {
+  const [flipped, setFlipped] = useState(false)
+  const Icon = group.icon
+
+  return (
+    <div className="flip-scene h-60">
+      {/*
+        One button drives the card: hover and focus flip it on desktop, and a
+        tap toggles it on touch, where there is no hover. aria-expanded plus a
+        real list on the back keeps it readable to assistive tech.
+      */}
+      <button
+        type="button"
+        aria-expanded={flipped}
+        aria-label={`${group.title} roles`}
+        onMouseEnter={() => setFlipped(true)}
+        onMouseLeave={() => setFlipped(false)}
+        onFocus={() => setFlipped(true)}
+        onBlur={() => setFlipped(false)}
+        onClick={() => setFlipped((open) => !open)}
+        className="group h-full w-full rounded-2xl text-left outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-4 focus-visible:ring-offset-muted"
+      >
+        <div className="flip-inner" data-flipped={flipped}>
+          {/* Front: the discipline, nothing else. */}
+          <div className="flip-face flip-face-front flex flex-col justify-between rounded-2xl border border-border bg-white p-6 shadow-[0_14px_34px_-26px_rgba(11,31,61,0.5)]">
+            <span className="flex size-12 items-center justify-center rounded-xl bg-brand-tint text-accent">
+              <Icon className="size-6" strokeWidth={1.8} aria-hidden="true" />
+            </span>
+
+            <span>
+              <span className="block text-balance font-heading text-xl font-bold leading-snug tracking-tight text-navy">
+                {group.title}
+              </span>
+              <span
+                aria-hidden="true"
+                className="mt-3 block h-1 w-10 rounded-full bg-accent"
+              />
+            </span>
+
+            <span className="flex items-center justify-between text-xs font-bold uppercase tracking-wide text-navy/40">
+              {group.roles.length} focus areas
+              <Plus className="size-4 text-accent" aria-hidden="true" />
+            </span>
+          </div>
+
+          {/* Back: the roles themselves. */}
+          <div className="flip-face flip-face-back flex flex-col justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-navy to-navy-deep p-6 shadow-[0_22px_50px_-28px_rgba(11,31,61,0.7)]">
+            <span
+              className="bg-grid pointer-events-none absolute inset-0 opacity-[0.08]"
+              aria-hidden="true"
+            />
+            <span className="relative block text-[0.65rem] font-bold uppercase tracking-[0.18em] text-accent">
+              {group.title}
+            </span>
+            <ul className="relative mt-4 flex flex-col gap-3">
+              {group.roles.map((role) => (
+                <li
+                  key={role}
+                  className="flex items-start gap-2.5 text-sm font-semibold leading-snug text-white"
+                >
+                  <span
+                    className="mt-1.5 size-1.5 shrink-0 rounded-full bg-accent"
+                    aria-hidden="true"
+                  />
+                  {role}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </button>
+    </div>
+  )
+}
+
 export function RolesSection() {
   return (
-    <section id="roles" className="bg-white py-16 lg:py-20">
+    <section id="roles" className="bg-muted py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeading
           title="Roles We Hire"
           subtitle="Specialists, not generalists"
-          description="We stay deliberately specialised. These are the areas we hire in repeatedly, where we know the market, the talent and what good actually looks like."
+          description="We stay deliberately specialised. Hover or tap a card to see the roles we hire in each area."
         />
 
         <RevealGroup
           className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
-          stagger={0.08}
+          stagger={0.06}
         >
           {ROLE_GROUPS.map((group) => (
-            <motion.div
-              key={group.title}
-              variants={revealItem}
-              tabIndex={0}
-              className="brand-card group h-full rounded-2xl p-6 outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
-            >
-              <h3 className="font-heading text-xl font-bold tracking-tight text-navy">
-                {group.title}
-              </h3>
-              <span
-                aria-hidden="true"
-                className="mt-3 block h-1 w-10 origin-left rounded-full bg-accent transition-transform duration-300 group-hover:scale-x-150"
-              />
-              <ul className="mt-5 flex flex-col gap-2.5">
-                {group.roles.map((role) => (
-                  <li
-                    key={role}
-                    className="flex items-center gap-3 text-sm font-semibold text-navy/80"
-                  >
-                    <span
-                      className="size-2 shrink-0 rounded-full bg-accent"
-                      aria-hidden="true"
-                    />
-                    {role}
-                  </li>
-                ))}
-              </ul>
+            <motion.div key={group.title} variants={revealItem}>
+              <FlipCard group={group} />
             </motion.div>
           ))}
         </RevealGroup>

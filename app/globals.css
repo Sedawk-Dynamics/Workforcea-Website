@@ -175,6 +175,53 @@
     }
   }
 
+  /* Flip cards: the scene owns the perspective, the inner element does the
+     rotation, and each face hides its own back so only one is ever visible. */
+  .flip-scene {
+    perspective: 1400px;
+  }
+
+  .flip-inner {
+    position: relative;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .flip-inner[data-flipped='true'] {
+    transform: rotateY(180deg);
+  }
+
+  .flip-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .flip-face-back {
+    transform: rotateY(180deg);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .flip-inner {
+      transition: opacity 0.2s ease;
+    }
+    /* No rotation: cross-fade the faces instead. */
+    .flip-inner[data-flipped='true'] {
+      transform: none;
+    }
+    .flip-inner[data-flipped='true'] .flip-face-front {
+      opacity: 0;
+    }
+    .flip-inner[data-flipped='false'] .flip-face-back {
+      opacity: 0;
+    }
+    .flip-face-back {
+      transform: none;
+    }
+  }
+
   /* Proof ticker: the track holds two copies of the list, so translating it
      by exactly half its width loops with no visible seam. */
   @keyframes marquee-track {
