@@ -19,6 +19,7 @@ import { SiteFooter } from '@/components/site-footer'
 export default function Page() {
   return (
     <>
+    
       <SplashScreen />
       <SiteHeader />
       <main>
