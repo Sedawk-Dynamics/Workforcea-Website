@@ -16,6 +16,7 @@ const NAV_LINKS = [
   { label: 'How We Work', href: '/#how-we-work' },
   { label: 'What You Get', href: '/#outcomes' },
   { label: 'Gallery', href: '/gallery' },
+  { label: 'Careers', href: '/careers' },
   { label: 'Contact', href: '/#contact' },
 ]
 

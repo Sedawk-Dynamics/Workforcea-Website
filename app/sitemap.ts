@@ -13,6 +13,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.6,
     },
+    {
+      url: `${SITE.url}/careers`,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
     ...SERVICES.map((service) => ({
       url: `${SITE.url}/${service.slug}`,
       changeFrequency: 'monthly' as const,

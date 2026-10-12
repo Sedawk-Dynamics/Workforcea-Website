@@ -96,6 +96,70 @@ export const SOCIAL_LINKS = [
   },
 ]
 
+export type OpenRole = {
+  slug: string
+  title: string
+  team: string
+  location: string
+  type: string
+  experience: string
+  summary: string
+  responsibilities: string[]
+  requirements: string[]
+}
+
+/** Current openings at Workforcea. Add an entry to publish a new role. */
+export const OPEN_ROLES: OpenRole[] = [
+  {
+    slug: 'software-tester',
+    title: 'Software Tester',
+    team: 'Technology',
+    location: 'Thane, Mumbai (On-site)',
+    type: 'Full-time',
+    experience: '2 - 5 years',
+    summary:
+      'Own the quality of the platforms and internal tools that our recruitment delivery runs on — from test planning through to release sign-off.',
+    responsibilities: [
+      'Write and maintain test plans, test cases and regression suites.',
+      'Run functional, integration, cross-browser and responsive testing.',
+      'Log, triage and track defects through to closure with the engineering team.',
+      'Build and extend automated test coverage for critical journeys.',
+      'Sign off releases and keep a clear record of what was tested.',
+    ],
+    requirements: [
+      '2 - 5 years in manual testing, with exposure to automation.',
+      'Working knowledge of a framework such as Selenium, Cypress or Playwright.',
+      'Comfortable with API testing and reading application logs.',
+      'Sharp eye for detail and clear written communication.',
+      'Bonus: experience testing recruitment, HR or SaaS products.',
+    ],
+  },
+  {
+    slug: 'technical-manager',
+    title: 'Technical Manager',
+    team: 'Technology',
+    location: 'Thane, Mumbai (Hybrid)',
+    type: 'Full-time',
+    experience: '8 - 12 years',
+    summary:
+      'Lead the technology function end to end — the delivery roadmap, the engineering standards and the small team that builds and runs our systems.',
+    responsibilities: [
+      'Own the technical roadmap and translate business priorities into delivery plans.',
+      'Lead, mentor and grow a small engineering and QA team.',
+      'Set the standard for architecture, code review, security and release process.',
+      'Work directly with the founder and delivery leads on what gets built next.',
+      'Stay hands-on: review code, unblock the team and make the hard calls.',
+    ],
+    requirements: [
+      '8 - 12 years in software engineering, including 3+ years leading a team.',
+      'Strong background in modern web architecture and cloud deployment.',
+      'Track record of shipping and running production systems.',
+      'Able to hold a technical conversation with engineers and a commercial one with the business.',
+      'Bonus: experience in recruitment technology, ATS platforms or HR tech.',
+    ],
+  },
+]
+
 export type GalleryItem = {
   src: string
   alt: string
