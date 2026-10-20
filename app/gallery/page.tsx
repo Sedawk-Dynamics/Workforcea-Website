@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     url: '/gallery',
     type: 'website',
+    images: ['/opengraph-image'],
   },
 }
 

@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     url: '/careers',
     type: 'website',
+    images: ['/opengraph-image'],
   },
 }
 

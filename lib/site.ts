@@ -25,6 +25,16 @@ export const SITE = {
   x: 'https://x.com/Workforcea0',
   facebook: 'https://www.facebook.com/Workforcea/',
   newsletterTitle: 'TA Leadership | Beyond Resume',
+  /** Google Search Console verification token. */
+  googleSiteVerification: 'KeiJ_XEuWgx2W2tlC9FBFbkN8f9bNq01iuvr-nU2jPQ',
+  /** Broken out for schema.org PostalAddress. */
+  postalAddress: {
+    street: "Level 4, D' Wing, MBC InfoTech Park, Ghodbunder Road, Kasarwadavali",
+    locality: 'Thane',
+    region: 'Maharashtra',
+    postalCode: '400615',
+    country: 'IN',
+  },
   newsletter:
     'https://www.linkedin.com/newsletters/ta-leadership-beyond-resumes-7418588126090178560',
 }

@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Plus_Jakarta_Sans, Inter } from 'next/font/google'
 import { Toaster } from '@/components/ui/sonner'
+import { SiteStructuredData } from '@/components/structured-data'
 import { SITE } from '@/lib/site'
 import './globals.css'
 
@@ -29,7 +30,32 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   applicationName: SITE.shortName,
   alternates: { canonical: '/' },
-  robots: { index: true, follow: true },
+  keywords: [
+    'talent acquisition firm India',
+    'technology recruitment',
+    'leadership hiring',
+    'executive search India',
+    'GCC hiring',
+    'RPO services',
+    'recruitment agency Thane',
+    'IT recruitment Mumbai',
+  ],
+  authors: [{ name: SITE.name, url: SITE.url }],
+  creator: SITE.name,
+  publisher: SITE.name,
+  category: 'Recruitment',
+  verification: { google: SITE.googleSiteVerification },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     type: 'website',
     siteName: SITE.name,
@@ -86,6 +112,7 @@ export default function RootLayout({
         <noscript>
           <style>{`[data-splash]{display:none!important}`}</style>
         </noscript>
+        <SiteStructuredData />
       </head>
       <body className="antialiased">
         {children}

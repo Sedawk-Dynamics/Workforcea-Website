@@ -5,6 +5,7 @@ import { ArrowUpRight, Check, ChevronRight, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
+import { ServiceStructuredData } from '@/components/structured-data'
 import { Reveal } from '@/components/motion/reveal'
 import { SERVICES, SITE, getService } from '@/lib/site'
 
@@ -33,6 +34,7 @@ export async function generateMetadata({
       description: service.description,
       url: `/${service.slug}`,
       type: 'website',
+      images: ['/opengraph-image'],
     },
   }
 }
@@ -51,6 +53,7 @@ export default async function ServicePage({
 
   return (
     <>
+      <ServiceStructuredData slug={service.slug} />
       <SiteHeader />
       <main>
         {/* Hero */}
