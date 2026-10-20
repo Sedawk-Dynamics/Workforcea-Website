@@ -25,6 +25,13 @@ export const SITE = {
   x: 'https://x.com/Workforcea0',
   facebook: 'https://www.facebook.com/Workforcea/',
   newsletterTitle: 'TA Leadership | Beyond Resume',
+  /**
+   * Web3Forms endpoint and access key for the contact form. The key is a
+   * public submission token by design — it only allows posting to the inbox
+   * configured at web3forms.com, so it belongs in the client bundle.
+   */
+  formEndpoint: 'https://api.web3forms.com/submit',
+  formAccessKey: '10e3823b-30ea-4416-8f70-794f5c0b8c41',
   /** Google Search Console verification token. */
   googleSiteVerification: 'KeiJ_XEuWgx2W2tlC9FBFbkN8f9bNq01iuvr-nU2jPQ',
   /** Broken out for schema.org PostalAddress. */

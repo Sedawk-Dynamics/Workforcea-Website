@@ -44,37 +44,61 @@ export function ContactSection() {
     event.preventDefault()
     const form = event.currentTarget
     const data = new FormData(form)
-    const payload = {
-      name: String(data.get('name') || '').trim(),
-      email: String(data.get('email') || '').trim(),
-      company: String(data.get('company') || '').trim(),
-      hiringType: String(data.get('hiringType') || '').trim(),
-      positions: String(data.get('positions') || '').trim(),
-      message: String(data.get('message') || '').trim(),
-      website: String(data.get('website') || '').trim(),
-    }
+    const name = String(data.get('name') || '').trim()
+    const email = String(data.get('email') || '').trim()
+    const message = String(data.get('message') || '').trim()
+    const company = String(data.get('company') || '').trim()
+    const hiringType = String(data.get('hiringType') || '').trim()
+    const positions = String(data.get('positions') || '').trim()
+    const botcheck = String(data.get('botcheck') || '').trim()
 
     const nextErrors: Record<string, boolean> = {
-      name: payload.name.length === 0,
-      email: !EMAIL_PATTERN.test(payload.email),
-      message: payload.message.length === 0,
+      name: name.length === 0,
+      email: !EMAIL_PATTERN.test(email),
+      message: message.length === 0,
     }
     setErrors(nextErrors)
     if (Object.values(nextErrors).some(Boolean)) return
 
+    // Honeypot: report success so bots do not learn they were caught.
+    if (botcheck) {
+      form.reset()
+      toast.success('Message sent', {
+        description: 'We will get back to you within one business day.',
+      })
+      return
+    }
+
     setIsSubmitting(true)
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(SITE.formEndpoint, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: SITE.formAccessKey,
+          subject: `New hiring enquiry - ${name}${
+            company ? ` (${company})` : ''
+          }`,
+          from_name: 'Workforcea Website',
+          // Web3Forms sets reply-to from this field.
+          name,
+          email,
+          company: company || '-',
+          hiring_type: hiringType || '-',
+          positions: positions || '-',
+          message,
+          botcheck: '',
+        }),
       })
       const result = await response.json().catch(() => ({}))
 
-      if (!response.ok) {
+      if (!response.ok || !result.success) {
         toast.error('Message not sent', {
           description:
-            result.error ||
+            result.message ||
             `Something went wrong. Please email us at ${SITE.email}.`,
         })
         return
@@ -250,11 +274,11 @@ export function ContactSection() {
 
                 {/* Honeypot — hidden from people, tempting to bots. */}
                 <div className="hidden" aria-hidden="true">
-                  <label htmlFor="website">Website</label>
+                  <label htmlFor="botcheck">Leave this empty</label>
                   <input
-                    id="website"
-                    name="website"
-                    type="text"
+                    id="botcheck"
+                    name="botcheck"
+                    type="checkbox"
                     tabIndex={-1}
                     autoComplete="off"
                   />
